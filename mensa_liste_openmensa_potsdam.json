@@ -1,0 +1,62 @@
+[
+    {
+        "id": 57,
+        "name": "Mensa Kiepenheuerallee",
+        "city": "Potsdam",
+        "address": "Kiepenheuerallee 5, 14469 Potsdam",
+        "coordinates": [
+            52.4138430685233,
+            13.051575422287
+        ]
+    },
+    {
+        "id": 55,
+        "name": "Mensa Am Neuen Palais",
+        "city": "Potsdam",
+        "address": "Am Neuen Palais 10, Haus 12, 14469 Potsdam",
+        "coordinates": [
+            52.399,
+            13.01494
+        ]
+    },
+    {
+        "id": 946,
+        "name": "Bistro W",
+        "city": "Potsdam",
+        "address": "August-Bebel-Str. 26-53, 14482 Potsdam",
+        "coordinates": [
+            52.3878775,
+            13.1210205
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Mensa Griebnitzsee",
+        "city": "Potsdam",
+        "address": "August-Bebel-Str. 89, 14482 Potsdam",
+        "coordinates": [
+            52.3935353446923,
+            13.1278145313263
+        ]
+    },
+    {
+        "id": 234,
+        "name": "Erfrischungshalle",
+        "city": "Potsdam",
+        "address": "Rudolf-Breitscheid-Str. 201, 14482 Potsdam, Germany",
+        "coordinates": [
+            52.394975684615,
+            13.1286996603012
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Ulf's Café (HPI Cafeteria)",
+        "city": "Potsdam",
+        "address": "Prof.-Dr.-Helmert-Str. 2-3, 14482 Potsdam, Germany",
+        "coordinates": [
+            52.3932931010875,
+            13.131183385849
+        ]
+    }
+]
