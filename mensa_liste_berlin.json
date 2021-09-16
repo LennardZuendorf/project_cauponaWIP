@@ -1,0 +1,329 @@
+{
+    "html_attributions" : [],
+    "results" : [
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.39354849999999,
+                "lng" : 13.1277556
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.39471622989271,
+                   "lng" : 13.1297845
+                },
+                "southwest" : {
+                   "lat" : 52.39201657010727,
+                   "lng" : 13.1270793
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Potsdam Students Mensa Griebnitzsee",
+          "opening_hours" : {
+             "open_now" : false
+          },
+          "photos" : [
+             {
+                "height" : 2268,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/108737398017439182264\"\u003eStephan Müller\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uECY6P6gUVF1iiklfm-grf4_oGQbis4STot7JesLk3LJu05DrJEXSed8LRkGVVEU1Q2aLSelqtNeRJLhF2ZSVCKcvaK6ra4djIKfzNunrbwbZ0OJj0-AGc9k0IdM6eJPnUMVn8A1GwEgbaIQ6ar7P14wX16piEc_5XjMlRufGFoy7PRN",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJMycELUhfqEcR8utewsrvSeg",
+          "plus_code" : {
+             "compound_code" : "94VH+C4 Potsdam, Germany",
+             "global_code" : "9F4M94VH+C4"
+          },
+          "price_level" : 1,
+          "rating" : 4.2,
+          "reference" : "ChIJMycELUhfqEcR8utewsrvSeg",
+          "scope" : "GOOGLE",
+          "types" : [ "point_of_interest", "establishment" ],
+          "user_ratings_total" : 219,
+          "vicinity" : "Universität Potsdam - Komplex 3 - Haus 6, August-Bebel-Str. 89, Potsdam"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.4079577,
+                "lng" : 12.9788757
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.40919482989271,
+                   "lng" : 12.98020047989272
+                },
+                "southwest" : {
+                   "lat" : 52.40649517010727,
+                   "lng" : 12.97750082010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Mensa - Campus Golm (Studentenwerk Potsdam)",
+          "opening_hours" : {
+             "open_now" : false
+          },
+          "photos" : [
+             {
+                "height" : 3840,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/108123946147225680593\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uED2K1NHfjdWZNuq0UBiKeXf3TpY0yF1AQXjQNO3Ylrjqx9YVoMvpE9JrHgkqHsEAWYLttqdtmOVeqcX44j8juSe0ILOxe8dPwZikaky6ebSRfqeUHvoS3pIT1iEO5ItQ3ULoJVbNStyr0d8UQKLv2ppBjSE4Q3qp8V4IFFWPUpyQbNs",
+                "width" : 5760
+             }
+          ],
+          "place_id" : "ChIJewwVNPjzqEcRRpKAxPNOhmw",
+          "plus_code" : {
+             "compound_code" : "CX5H+5H Potsdam, Germany",
+             "global_code" : "9F4JCX5H+5H"
+          },
+          "rating" : 4.3,
+          "reference" : "ChIJewwVNPjzqEcRRpKAxPNOhmw",
+          "scope" : "GOOGLE",
+          "types" : [ "point_of_interest", "establishment" ],
+          "user_ratings_total" : 229,
+          "vicinity" : "4, Karl-Liebknecht-Straße 24, Potsdam"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.4028548,
+                "lng" : 13.0118987
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.40420462989272,
+                   "lng" : 13.01324852989272
+                },
+                "southwest" : {
+                   "lat" : 52.40150497010728,
+                   "lng" : 13.01054887010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Mensa Am Neuen Palais (Studentenwerk Potsdam)",
+          "opening_hours" : {
+             "open_now" : false
+          },
+          "photos" : [
+             {
+                "height" : 3648,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/110205442343320529148\"\u003eFF Racing\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uEAjJYQGNo6gutQjGRI0ujPJHkF8-CGa0FphVsPluCQ_FSl3d1HJ2j1hXqVByE19co5D99U1eGMGuTQ-D2ONPsP5jAxbNbXgFoijJX2Zc_-XS8vZt1kcAFo1I1WqFmUSvH7B-TIhaD6hCeplCYKE9UJmL9drAFVV2THnjW9G7l1qwtLs",
+                "width" : 2736
+             }
+          ],
+          "place_id" : "ChIJfQyaTj30qEcRFIjY2CXODNs",
+          "plus_code" : {
+             "compound_code" : "C236+4Q Potsdam, Germany",
+             "global_code" : "9F4MC236+4Q"
+          },
+          "price_level" : 1,
+          "rating" : 4.4,
+          "reference" : "ChIJfQyaTj30qEcRFIjY2CXODNs",
+          "scope" : "GOOGLE",
+          "types" : [ "point_of_interest", "establishment" ],
+          "user_ratings_total" : 56,
+          "vicinity" : "Haus 12, Am Neuen Palais 10, Potsdam"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.3822205,
+                "lng" : 13.0199247
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.38365607989272,
+                   "lng" : 13.02112352989272
+                },
+                "southwest" : {
+                   "lat" : 52.38095642010727,
+                   "lng" : 13.01842387010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Mensa & Caféteria Sportpark Luftschiffhafen",
+          "photos" : [
+             {
+                "height" : 3024,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/117860444905872223062\"\u003eCarsten csc\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uECpwA-JNo5kb1kZEweqgLcfMIZ5keh1YOHTlgULMuohGXiy2akAjKNXrvFqbX1lv0NKaXY8FO5mxHdaxRIgOc-7p8WOqajDOtO2b1bG2UJWVhlOIFz1CYulvfwlrDkojJi-z3oPdXO4pyh6Ll43dk66VBfjeYWKDeyeW2t2t5l5X-OE",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJjRU_S070qEcRIcsYbmKacGc",
+          "plus_code" : {
+             "compound_code" : "92J9+VX Potsdam, Germany",
+             "global_code" : "9F4M92J9+VX"
+          },
+          "rating" : 3.7,
+          "reference" : "ChIJjRU_S070qEcRIcsYbmKacGc",
+          "scope" : "GOOGLE",
+          "types" : [ "point_of_interest", "establishment" ],
+          "user_ratings_total" : 37,
+          "vicinity" : "Zeppelinstraße 115, Potsdam"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.3892575,
+                "lng" : 13.1166451
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.39062107989272,
+                   "lng" : 13.11824827989272
+                },
+                "southwest" : {
+                   "lat" : 52.38792142010728,
+                   "lng" : 13.11554862010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+          "icon_background_color" : "#7B9EB0",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+          "name" : "Mensa Filmuniversität Babelsberg KONRAD WOLF (Studentenwerk Potsdam)",
+          "photos" : [
+             {
+                "height" : 3840,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/104236673779527731984\"\u003eDerKomturXIV\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uECMHrGzBjY-y_5tgWrca7vOiyyPKjhqyL4PheAkrYUqDXhm6A2cQmjseLEHoqRwkKWYqrhDU6ztFO7EBWVE4FkoorLQIwIXNjdgetDEUPQyKC9v_5nnKjeGJcNIT6VLAZKEvqrz9b9STy-upYlhpbGsSJD8NNq28w9fZUJfOgiTBbw6",
+                "width" : 5120
+             }
+          ],
+          "place_id" : "ChIJFfU4-yBfqEcR3NiCLVFTyvw",
+          "plus_code" : {
+             "compound_code" : "94Q8+PM Potsdam, Germany",
+             "global_code" : "9F4M94Q8+PM"
+          },
+          "rating" : 4.9,
+          "reference" : "ChIJFfU4-yBfqEcR3NiCLVFTyvw",
+          "scope" : "GOOGLE",
+          "types" : [ "point_of_interest", "establishment" ],
+          "user_ratings_total" : 8,
+          "vicinity" : "Marlene-Dietrich-Allee 11/Haus 6, Potsdam"
+       },
+       {
+          "business_status" : "CLOSED_TEMPORARILY",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.4002778,
+                "lng" : 13.0119444
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.40166772989272,
+                   "lng" : 13.01329062989272
+                },
+                "southwest" : {
+                   "lat" : 52.39896807010727,
+                   "lng" : 13.01059097010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+          "icon_background_color" : "#FF9E67",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+          "name" : "Cafeteria Am Neuen Palais (Studentenwerk Potsdam)",
+          "permanently_closed" : true,
+          "photos" : [
+             {
+                "height" : 800,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/103085518801388425598\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uEBLaCzqoc-hVbk0RIV51AGh7MMqPS_F9AOQW_j9LguoCUHlbuJolSX5rF2R2BMTwSVw95YSmHMxlwF4NAbmSX8km0YmluuDRkLFL194NGJd2en_QhXvdKm6dxbW55rA7KRL-4fKep04V7hYzQ4vjOYtvFIjw_9QR7yq7nqQRW7xZgtj",
+                "width" : 1200
+             }
+          ],
+          "place_id" : "ChIJGdxnpj30qEcRJnLFnZmtaI0",
+          "plus_code" : {
+             "compound_code" : "C226+4Q Potsdam, Germany",
+             "global_code" : "9F4MC226+4Q"
+          },
+          "rating" : 4,
+          "reference" : "ChIJGdxnpj30qEcRJnLFnZmtaI0",
+          "scope" : "GOOGLE",
+          "types" : [ "cafe", "food", "point_of_interest", "establishment" ],
+          "user_ratings_total" : 18,
+          "vicinity" : "Haus 8, Am Neuen Palais 7, Potsdam"
+       },
+       {
+          "business_status" : "OPERATIONAL",
+          "geometry" : {
+             "location" : {
+                "lat" : 52.383083,
+                "lng" : 13.0349615
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 52.38456012989273,
+                   "lng" : 13.03616892989272
+                },
+                "southwest" : {
+                   "lat" : 52.38186047010728,
+                   "lng" : 13.03346927010728
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+          "icon_background_color" : "#FF9E67",
+          "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+          "name" : "Z-Catering Kantine Betriebsrestaurant",
+          "opening_hours" : {
+             "open_now" : true
+          },
+          "photos" : [
+             {
+                "height" : 3024,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/108814216367634157232\"\u003eA Google User\u003c/a\u003e"
+                ],
+                "photo_reference" : "Aap_uED-HJwSaclHWik-zCfmecUWwY-PGDuK0MZ5dudf4hAF63N_rcvDl9tEPugy0cbw0P8IqHq-CaEa-Mz1U7cUroOGUC1WjL3fFd8WZq4CpoWtRs-GEynHoX93m5_kZ5B76FgMtb95LrQ09Pz-R8-5j8pwXm0tfukDo81aTvmuJ04Kat0",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJ7Qh8-dr1qEcRMrGx32rvyzo",
+          "plus_code" : {
+             "compound_code" : "92MM+6X Potsdam, Germany",
+             "global_code" : "9F4M92MM+6X"
+          },
+          "rating" : 4.2,
+          "reference" : "ChIJ7Qh8-dr1qEcRMrGx32rvyzo",
+          "scope" : "GOOGLE",
+          "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+          "user_ratings_total" : 5,
+          "vicinity" : "Hermannswerder 23, Potsdam"
+       }
+    ],
+    "status" : "OK"
+ }
