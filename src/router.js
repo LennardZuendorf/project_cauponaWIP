@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {auth} from '/firebase'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Cafeteria from './views/Cafeteria';
@@ -15,22 +16,34 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/cafeteria',
       name: 'cafeteria',
-      component: Cafeteria
+      component: Cafeteria,
+      meta: {
+        requiresAuth: false
+      }
     },
     {
       path: '/profile',
       name: 'profile',
-      component: Profile
+      component: Profile,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })

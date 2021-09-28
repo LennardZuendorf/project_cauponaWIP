@@ -1,11 +1,10 @@
 <template>
   <v-app>
-
+    <TopToolbar></TopToolbar>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 import TopToolbar from './components/TopToolbar'
 
 export default {
@@ -13,7 +12,7 @@ export default {
 
   components: {
     TopToolbar,
-    HelloWorld,
+
   },
 
   data: () => ({
