@@ -1,11 +1,10 @@
 <template>
 
-
 </template>
 
 <script>
 export default {
-  name: "Food"
+  name: "About"
 }
 </script>
 

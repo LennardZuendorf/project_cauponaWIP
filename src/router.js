@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import {auth} from '/firebase'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
-import Cafeteria from './views/Cafeteria';
-import Profile from './views/Profile';
+import Cafeteria from './views/Menu';
+import Profile from './views/Map';
 
 
 Vue.use(Router)

@@ -32,8 +32,7 @@
 
 <script>
 export default {
-  name: "BottomNav",
-  data: () => ({ value: 1 }),
+  name: "BottomNav"
 }
 </script>
 
