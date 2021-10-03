@@ -1,30 +1,26 @@
 <template>
   <v-app>
-    <TopToolbar></TopToolbar>
+  <top-toolbar></top-toolbar>
 
-    <v-main>
-      <v-container>
 
-      </v-container>
-    </v-main>
+    <router-link to="/"> HOME</router-link>
+    <router-link to="/"> ABOUT</router-link>
 
-    <BottomNav></BottomNav>
+    <router-view></router-view>
+
+
+  <BottomNav></BottomNav>
   </v-app>
 </template>
 
 <script>
+
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
-
 export default {
+  components: {BottomNav, TopToolbar},
+  data() {
+    return {};},
   name: 'App',
-
-  components: {
-    BottomNav,
-    TopToolbar,
-
-  },
-  data: () => ({
-  }),
-};
+  };
 </script>
