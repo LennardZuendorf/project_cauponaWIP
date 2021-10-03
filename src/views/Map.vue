@@ -4,7 +4,7 @@
 
     <v-main>
       <v-container>
-
+        <MapBox></MapBox>
       </v-container>
     </v-main>
 
@@ -13,12 +13,14 @@
 </template>
 
 <script>
+
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
-import Footer from "@/components/Footer";
+import MapBox from "@/components/MapBox";
 
 export default {
-  name: "Map"
+  name: "Map",
+  components: {MapBox, BottomNav, TopToolbar}
 }
 </script>
 
