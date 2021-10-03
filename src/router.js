@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import {auth} from '/firebase'
-import Home from './views/Home.vue'
-import About from './views/About.vue'
-import Cafeteria from './views/Menu';
-import Profile from './views/Map';
+import Home from '@/views/Home'
+import Menu from '@/views/Menu';
+import Map from '@/views/Map';
+import Error from '@/views/Error'
 
 
 Vue.use(Router)
@@ -16,34 +16,22 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
-      meta: {
-        requiresAuth: false
-      }
+      component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
-      meta: {
-        requiresAuth: false
-      }
+      path: '/Menu',
+      name: 'Menu',
+      component: Menu
     },
     {
-      path: '/cafeteria',
-      name: 'cafeteria',
-      component: Cafeteria,
-      meta: {
-        requiresAuth: false
-      }
+      path: '/map',
+      name: 'map',
+      component: Map
     },
     {
-      path: '/profile',
-      name: 'profile',
-      component: Profile,
-      meta: {
-        requiresAuth: true
-      }
+      path: '/error',
+      name: 'error',
+      component: Error
     }
   ]
 })
