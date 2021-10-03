@@ -16,7 +16,7 @@
 
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
-import MapBox from "@/components/MapBox";
+import MapBox from "@/components/Map/MapBox";
 
 export default {
   name: "Map",
