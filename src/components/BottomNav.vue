@@ -1,39 +1,34 @@
 <template>
   <v-bottom-navigation
-      v-model="value"
-      color="light-green"
-      horizontal
+      :value="value"
+      color="primary"
   >
     <v-btn>
-      <span>Home</span>
-
-      <v-icon>mdi-home</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Food</span>
+      <span>FOOD</span>
 
       <v-icon>mdi-food</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Card</span>
+      <span>HOME</span>
 
-      <v-icon>mdi-card-text</v-icon>
+      <v-icon>mdi-home</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Profile</span>
+      <span>MAP</span>
 
-      <v-icon>mdi-account-circle</v-icon>
+      <v-icon>mdi-map</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
 
 <script>
 export default {
+  data: () => ({ value: 1 }),
   name: "BottomNav"
 }
+
 </script>
 
 <style scoped>
