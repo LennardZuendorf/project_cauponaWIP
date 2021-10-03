@@ -3,17 +3,43 @@
     <v-main>
       <v-container>
 
+        <v-row
+            align="center"
+            justify="space-around"
+        >
+          <v-col>
+            <v-img :src="require('@/assets/icon_cap.svg')"></v-img>
+          </v-col>
 
+        </v-row>
 
+        <v-row
+            align="center"
+            justify="space-around"
+        >
+          <v-text-field>
+            An error has occured. We’re sorry for the inconvience!
+          </v-text-field>
+        </v-row>
+
+        <v-row
+          align="center"
+          justify="space-around"
+        >
+          <v-btn
+              depressed
+              elevation="2"
+              color="primary"
+          >
+            RETURN
+          </v-btn>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import TopToolbar from "@/components/TopToolbar";
-import BottomNav from "@/components/BottomNav";
-import Footer from "@/components/Footer";
 
 export default {
   name: "Error"

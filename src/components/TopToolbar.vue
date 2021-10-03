@@ -12,16 +12,6 @@
       </v-row>
     </v-app-bar>
 
-    <v-card-text>
-      <v-row>
-        Test1
-      </v-row>
-      <v-row>
-        Test2
-      </v-row>
-    </v-card-text>
-
-
   </v-card>
 </template>
 

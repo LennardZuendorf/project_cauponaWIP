@@ -15,20 +15,16 @@
 <script>
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
-import Footer from "@/components/Footer";
 
 export default {
   name: 'App',
 
   components: {
-    Footer,
     BottomNav,
     TopToolbar,
 
   },
-
   data: () => ({
-    //
   }),
 };
 </script>

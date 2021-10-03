@@ -11,8 +11,19 @@
     <BottomNav></BottomNav>
   </v-app>
 </template>
+
+<script>
+import TopToolbar from "@/components/TopToolbar";
+import BottomNav from "@/components/BottomNav";
+
 export default {
-  name: "Menu"
+  name: 'Menu',
+
+  components: {
+    BottomNav,
+    TopToolbar,
+
+  }
 }
 </script>
 
