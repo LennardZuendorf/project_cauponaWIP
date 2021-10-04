@@ -1,14 +1,34 @@
 <template>
   <v-app>
-    <TopToolbar></TopToolbar>
-
     <v-main>
       <v-container>
 
+        <v-row>
+          <v-col>
+
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+
+          </v-col>
+        </v-row>
+
       </v-container>
     </v-main>
-
-    <BottomNav></BottomNav>
   </v-app>
 </template>
 
