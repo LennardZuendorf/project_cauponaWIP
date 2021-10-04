@@ -1,3 +1,5 @@
+//TODO: Fix Routes and add authentication "Borders"
+
 import {createRouter, createWebHistory} from 'vue-router'
 import Home from '@/views/Home'
 import Menu from '@/views/Menu';
