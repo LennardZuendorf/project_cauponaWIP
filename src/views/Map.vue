@@ -1,26 +1,31 @@
 <template>
   <v-app>
-    <TopToolbar></TopToolbar>
-
     <v-main>
       <v-container>
-        <MapBox></MapBox>
+
+        <v-row>
+          <v-col cols="10">
+            <div>FIND CANTINES</div> <!--TODO: Add Font Style and Size-->
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col cols="10">
+            <MapBox></MapBox>
+          </v-col>
+        </v-row>
+
       </v-container>
     </v-main>
-
-    <BottomNav></BottomNav>
   </v-app>
 </template>
 
 <script>
-
-import TopToolbar from "@/components/TopToolbar";
-import BottomNav from "@/components/BottomNav";
 import MapBox from "@/components/Map/MapBox";
 
 export default {
   name: "Map",
-  components: {MapBox, BottomNav, TopToolbar}
+  components: {MapBox}
 }
 </script>
 
