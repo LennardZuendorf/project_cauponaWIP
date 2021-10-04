@@ -1,24 +1,29 @@
 <template>
   <v-app>
-  <top-toolbar></top-toolbar>
 
+    <v-main>
+      <TopToolbar></TopToolbar>
+            <router-view></router-view>
+      <BottomNav></BottomNav>
+    </v-main>
 
-    <router-link to="/"> HOME</router-link>
-    <router-link to="/"> ABOUT</router-link>
+    <v-footer>
+      <CauponaFooter></CauponaFooter>
+    </v-footer>
 
-    <router-view></router-view>
-
-
-  <BottomNav></BottomNav>
   </v-app>
+
 </template>
 
 <script>
 
+//TODO: Implement 2 Calls & Caching: Cafeteria List, User Data
+
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
+import CauponaFooter from "@/components/CauponaFooter";
 export default {
-  components: {BottomNav, TopToolbar},
+  components: {BottomNav, TopToolbar, CauponaFooter},
   data() {
     return {};},
   name: 'App',
