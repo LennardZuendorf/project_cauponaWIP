@@ -12,16 +12,42 @@
       </v-row>
     </v-app-bar>
 
+    <v-card-title>
+
+    </v-card-title>
+
+    <v-card-text>
+      <v-row>
+
+        <About></About>
+        <Login></Login><!--TODO: Find out how to change if logged in. to:-->
+
+        <!--
+        <About></About>
+        <Profile></Profile>
+        <v-btn> LOGOUT </v-btn>
+        -->
+
+      </v-row>
+    </v-card-text>
+
   </v-card>
+
+
 </template>
 
 <script>
+import About from "@/components/Popups/About";
+import Login from "@/components/Popups/Login";
 export default {
   name: 'TopToolbar',
+  components: {Login, About},
   data: () => ({
     collapseOnScroll: true,
   }),
 }
+
+//TODO: Implement Routes Changes on Click
 </script>
 
 <style>

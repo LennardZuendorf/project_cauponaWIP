@@ -28,6 +28,7 @@ export default {
   data: () => ({ value: 1 }),
   name: "BottomNav"
 }
+//TODO: Implement Routes Changes on Click
 
 </script>
 
