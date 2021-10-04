@@ -12,8 +12,8 @@
           >
             <v-text-field
                 label="Name"
-                placeholder="Placeholder"
-            ></v-text-field>
+                placeholder="your name, i.e. Max"
+            ></v-text-field><!-- TODO: Replace with InPut from Firebase-->
           </v-col>
 
           <v-col
@@ -23,8 +23,8 @@
           >
             <v-text-field
                 label="Surname"
-                placeholder="Put Your"
-            ></v-text-field>
+                placeholder="your surname, i.e. Mueller"
+            ></v-text-field><!-- TODO: Replace with InPut from Firebase-->
           </v-col>
         </v-row>
 
@@ -39,7 +39,7 @@
                 label="password"
                 counter
                 @click:append="show1 = !show1"
-            ></v-text-field>
+            ></v-text-field><!-- TODO: Replace with InPut from Firebase-->
           </v-col>
         </v-row>
 
@@ -72,6 +72,8 @@
 </template>
 
 <script>
+//TODO: Implement Firebase Login (or Okta)
+
 export default {
   name: "Profile",
   data () {
@@ -92,6 +94,7 @@ export default {
     }
   },
 }
+//TODO: Add Calls to Firebase or get Data from App.vue
 </script>
 
 <style scoped>

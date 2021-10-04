@@ -6,6 +6,7 @@
 </template>
 
 <script>
+//TODO: Implement getting Location data trough browser
 
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
@@ -53,6 +54,7 @@
         renderMarkers();
       });
 
+      //TODO: Implement getting cached list of Cafeterias trough app.vue
       const renderMarkers = () => {
         const filtered = filterData();
         zoomCenter(filtered);

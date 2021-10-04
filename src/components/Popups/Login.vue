@@ -60,6 +60,7 @@
                   text
                   @click="dialog.value = false"
               >close</v-btn>
+              <Register></Register>
             </v-card-actions>
           </v-card>
 
@@ -70,8 +71,10 @@
 </template>
 
 <script>
+import Register from "@/components/Popups/Register";
 export default {
-  name: "Login"
+  name: "Login",
+  components: {Register}
 }
 </script>
 
