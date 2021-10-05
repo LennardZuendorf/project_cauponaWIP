@@ -20,8 +20,6 @@
                   <v-btn
                       color="white"
                       dark
-                      v-bind="attrs"
-                      v-on="on"
                       text
                       block
                       large

@@ -1,12 +1,61 @@
 <template>
   <div class="Home">
-    <h1>This is the Home Page</h1>
+
+    <v-card
+        class="mx-auto"
+        max-width="95%"
+        max-height="45%"
+        elevation="3"
+        color="background"
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h5 mb-1">
+            Check for the nearest cafeterias:
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-card-text>
+        <MapBox></MapBox>
+      </v-card-text>
+    </v-card>
+
+    <v-spacer></v-spacer>
+
+    <v-card
+        class="mx-auto"
+        max-width="95%"
+        max-height="45%"
+        elevation="3"
+        color="background"
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h5 mb-1">
+            Check the food at the nearest Cafeteria
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Your nearest Cafeteria:
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-card-text>
+
+      </v-card-text>
+
+    </v-card>
+
+
   </div>
 </template>
 
 <script>
+import MapBox from "@/components/Map/MapBox";
 export default {
-  name: "Home"
+  name: "Home",
+  components: {MapBox}
 }
 </script>
 
