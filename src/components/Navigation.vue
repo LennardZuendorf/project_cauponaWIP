@@ -9,7 +9,7 @@
       <v-icon>mdi-food</v-icon>
     </v-btn>
 
-    <v-btn @click="$router.push('home')">
+    <v-btn @click="$router.push('/')">
       <span>HOME</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
