@@ -1,10 +1,11 @@
 <template>
   <div class="Home">
+    <v-container fill-height>
 
     <v-card
         class="mx-auto"
-        max-width="95%"
-        max-height="45%"
+        width="95%"
+        height="45%"
         elevation="3"
         color="background"
     >
@@ -21,12 +22,10 @@
       </v-card-text>
     </v-card>
 
-    <v-spacer></v-spacer>
-
     <v-card
         class="mx-auto"
-        max-width="95%"
-        max-height="45%"
+        width="95%"
+        height="45%"
         elevation="3"
         color="background"
     >
@@ -40,13 +39,10 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-
       <v-card-text>
-
       </v-card-text>
-
     </v-card>
-
+    </v-container>
 
   </div>
 </template>

@@ -1,9 +1,11 @@
 <template>
   <div class="Menu">
+    <v-container fill-height>
+
     <v-card
         class="mx-auto"
-        max-width="95%"
-        max-height="95%"
+        width="95%"
+        height="90%"
         elevation="3"
         color="background"
     >
@@ -23,6 +25,7 @@
       </v-card-text>
 
     </v-card>
+    </v-container>
   </div>
 </template>
 

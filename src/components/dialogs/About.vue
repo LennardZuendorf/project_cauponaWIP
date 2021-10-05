@@ -33,46 +33,50 @@
       <v-toolbar-title>ABOUT</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
+
+
     <v-card
         max-width="400"
         flat
     >
 
-      <v-list-item three-line>
-        <v-list-item-content>
-          <v-list-item-title>What is Caupona?</v-list-item-title>
-          <v-list-item-subtitle>
-            Caupona is a webapp created by Lennard Zündorf, Gökalp Yilmiz and Samuel Gehring.
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+        <v-list-item three-line>
+          <v-list-item-content>
+            <v-list-item-title>What is Caupona?</v-list-item-title>
+            <v-list-item-subtitle>
+              Caupona is a webapp created by Lennard Zündorf, Gökalp Yilmiz and Samuel Gehring.
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
 
-      <v-list-item three-line>
-        <v-list-item-content>
-          <v-list-item-title>What is Caupona for?</v-list-item-title>
-          <v-list-item-subtitle>
-            You can check on nearest student cantines an check the current menu easily.
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+        <v-list-item three-line>
+          <v-list-item-content>
+            <v-list-item-title>What is Caupona for?</v-list-item-title>
+            <v-list-item-subtitle>
+              You can check on nearest student cantines an check the current menu easily.
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
 
-      <v-list-item three-line>
-        <v-list-item-content>
-          <v-list-item-title>Why did we create Caupona?</v-list-item-title>
-          <v-list-item-subtitle>
-            It's been created as part of HTW Berlins' course called "programming of mobile applications".
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+        <v-list-item three-line>
+          <v-list-item-content>
+            <v-list-item-title>Why did we create Caupona?</v-list-item-title>
+            <v-list-item-subtitle>
+              It's been created as part of HTW Berlins' course called "programming of mobile applications".
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
 
-      <v-list-item three-line>
-        <v-list-item-content>
-          <v-list-item-title>Why choose Caupona as a name?</v-list-item-title>
-          <v-list-item-subtitle>
-            Caupona means "Mensa" in latin. It really is that simple!
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+        <v-list-item three-line>
+          <v-list-item-content>
+            <v-list-item-title>Why choose Caupona as a name?</v-list-item-title>
+            <v-list-item-subtitle>
+              Caupona means "Mensa" in latin. It really is that simple!
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+      </v-row>
 
     </v-card>
   </v-card>
