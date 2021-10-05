@@ -1,42 +1,73 @@
 <template>
     <span>
-        <v-navigation-drawer app v-model="drawer" class="background lighten-2" dark disable-resize-watcher>
-            <v-list>
-                <template v-for="(item, index) in items">
-                    <v-list-tile :key="index">
-                        <v-list-tile-content>
-                            {{item.title}}
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-divider :key="`divider-${index}`"></v-divider>
-                </template>
-            </v-list>
+        <v-navigation-drawer app v-model="drawer" color="primary" dark disable-resize-watcher>
+          <v-container align-content="end" fill-height>
+
+            <v-row>
+              <v-spacer></v-spacer>
+              <About></About>
+              <v-spacer></v-spacer>
+            </v-row>
+
+            <v-row>
+              <v-spacer></v-spacer>
+              <Login></Login>
+              <v-spacer></v-spacer>
+            </v-row>
+
+            <v-row>
+              <v-spacer></v-spacer>
+                  <v-btn
+                      color="white"
+                      dark
+                      v-bind="attrs"
+                      v-on="on"
+                      text
+                      block
+                      large
+                  >
+                    LOGOUT
+                  </v-btn>
+              <v-spacer></v-spacer>
+            </v-row>
+
+            <v-row>
+              <v-spacer></v-spacer>
+              <Settings></Settings>
+              <v-spacer></v-spacer>
+            </v-row>
+
+          </v-container>
+
         </v-navigation-drawer>
-        <v-toolbar app color="background darken-4" dark>
-            <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-            <v-spacer class="hidden-md-and-up"></v-spacer>
-            <v-toolbar-title>{{appTitle}}</v-toolbar-title>
-        </v-toolbar>
+        <v-app-bar app color="primary" dark>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+
+          <v-toolbar-title>
+            <h3>CAUPONA</h3>
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-app-bar>
     </span>
 </template>
 
 <script>
+import About from "@/components/dialogs/About";
+import Login from "@/components/dialogs/Login";
+import Settings from "@/components/dialogs/Settings";
+
 export default {
   name: 'Toolbar',
+  components: {Login, About, Settings},
+
   data() {
     return {
-      appTitle: 'CAUPONA',
-      drawer: false,
-      items: [
-        { title: 'about' },
-        { title: 'help' },
-        { title: 'login' }
-      ]
+      drawer: false
     };
   }
 };
 </script>
 
 <style scoped>
-
 </style>
