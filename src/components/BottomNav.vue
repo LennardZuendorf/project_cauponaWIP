@@ -2,6 +2,7 @@
   <v-bottom-navigation
       :value="value"
       color="primary"
+      fixed-bottom
   >
     <v-btn>
       <span>FOOD</span>

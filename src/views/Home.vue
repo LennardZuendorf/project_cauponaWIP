@@ -1,4 +1,7 @@
 <template>
+  <div>
+  <h1>TEST</h1>
+
   <v-app>
     <v-main>
       <v-container>
@@ -21,6 +24,7 @@
       </v-container>
     </v-main>
   </v-app>
+  </div>
 </template>
 
 <script>

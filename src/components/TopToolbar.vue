@@ -6,7 +6,7 @@
       <v-row class="d-flex align-content-center justify-center">
         <v-col cols="6" >
           <v-toolbar-title >
-            <v-img :src="require('@/assets/caupona_logo_text.svg')" max-height="75px"></v-img>
+            <v-img :src="require('@/assets/caupona_logo_text.svg')" max-height="50px"></v-img>
           </v-toolbar-title>
         </v-col>
       </v-row>
@@ -19,9 +19,11 @@
     <v-card-text>
       <v-row>
 
-        <About></About>
-        <Login></Login><!--TODO: Find out how to change if logged in. to:-->
 
+        <!--
+        <About></About>
+        <Login></Login> TODO: Find out how to change if logged in. to:
+        -->
         <!--
         <About></About>
         <Profile></Profile>
