@@ -20,9 +20,6 @@ export default {
   components: {Navigation, Toolbar},
   data: () => ({
   }),
-
-
-
 };
 
 </script>
