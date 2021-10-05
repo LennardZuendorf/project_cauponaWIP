@@ -1,6 +1,6 @@
 <template>
   <div class="Map">
-    <h1>This is an Error Page</h1>
+    <h1>This is the map Page</h1>
   </div>
 </template>
 
