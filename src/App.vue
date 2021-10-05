@@ -1,31 +1,40 @@
+
 <template>
   <v-app>
+    <TopToolbar></TopToolbar>
 
-    <v-main>
-      <TopToolbar></TopToolbar>
-            <router-view></router-view>
-      <BottomNav></BottomNav>
-    </v-main>
 
-    <v-footer>
-      <CauponaFooter></CauponaFooter>
-    </v-footer>
 
+    <BottomNav></BottomNav>
   </v-app>
-
 </template>
 
 <script>
 
-//TODO: Implement 2 Calls & Caching: Cafeteria List, User Data
 
 import TopToolbar from "@/components/TopToolbar";
 import BottomNav from "@/components/BottomNav";
-import CauponaFooter from "@/components/CauponaFooter";
+import { useRouter } from "vue-router";
+import {computed} from "vue";
+
+
 export default {
-  components: {BottomNav, TopToolbar, CauponaFooter},
+  components: {BottomNav, TopToolbar},
+  setup() {
+    const router = useRouter();
+    const routingSpace = computed(() => {
+      console.log(router.currentRoute.value.path);
+      return router.currentRoute.value.path;
+    });
+    return {
+      routingSpace,
+    };
+  },
   data() {
-    return {};},
-  name: 'App',
-  };
+    return {
+      inputGroup: [],
+    };
+  },
+  methods: {},
+};
 </script>
