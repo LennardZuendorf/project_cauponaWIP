@@ -34,13 +34,7 @@
       <v-spacer></v-spacer>
     </v-toolbar>
 
-
-    <v-card
-        max-width="400"
-        flat
-    >
-
-        <v-list-item three-line>
+    <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>What is Caupona?</v-list-item-title>
             <v-list-item-subtitle>
@@ -76,10 +70,7 @@
           </v-list-item-content>
         </v-list-item>
 
-      </v-row>
-
     </v-card>
-  </v-card>
   </v-dialog>
 </template>
 
