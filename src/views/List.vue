@@ -2,36 +2,36 @@
   <div class="Map">
     <v-container fill-height>
 
-    <v-card
-        class="mx-auto"
-        width="95%"
-        height="45%"
-        elevation="3"
-        color="background"
-    >
+      <v-card
+          class="mx-auto"
+          width="95%"
+          height="45%"
+          elevation="3"
+          color="background"
+      >
 
-      <v-card-title>
-        Check out all cafeterias:
-      </v-card-title>
+        <v-card-title>
+          Check out all cafeterias:
+        </v-card-title>
 
-      <MensaListNearby></MensaListNearby>
+        <MensaListNearby></MensaListNearby>
 
-    </v-card>
+      </v-card>
 
-    <v-card
-        class="mx-auto"
-        width="95%"
-        height="45%"
-        elevation="3"
-        color="background"
-    >
-      <v-card-title>
-        Check out all cafeterias:
-      </v-card-title>
+      <v-card
+          class="mx-auto"
+          width="95%"
+          height="45%"
+          elevation="3"
+          color="background"
+      >
+        <v-card-title>
+          Check out all cafeterias:
+        </v-card-title>
 
-      <MensaList></MensaList>
+        <MensaList></MensaList>
 
-    </v-card>
+      </v-card>
 
     </v-container>
   </div>

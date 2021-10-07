@@ -22,11 +22,11 @@ export default {
 
   data: () => ({}),
 
-    beforeMount(){
+  beforeMount(){
 
-      this.$store.dispatch('loadCafeterias');
-      this.$store.dispatch('getCloseCafeterias');
-    }
+    this.$store.dispatch('loadCafeterias');
+    this.$store.dispatch('getCloseCafeterias');
+  }
 };
 
 </script>

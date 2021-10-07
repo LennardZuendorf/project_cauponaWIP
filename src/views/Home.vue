@@ -27,11 +27,11 @@
 
       <v-row>
         <v-card
-          class="mx-auto"
-          width="95%"
-          height="45%"
-          elevation="3"
-          color="background"
+            class="mx-auto"
+            width="95%"
+            height="45%"
+            elevation="3"
+            color="background"
         >
           <v-list-item>
             <v-list-item-content>
@@ -46,7 +46,7 @@
           <v-card-text>
             <foo
           </v-card-text>
-      </v-card>
+        </v-card>
 
       </v-row>
     </v-container>
@@ -64,4 +64,4 @@ export default {
 
 <style scoped>
 
-</style>
+
