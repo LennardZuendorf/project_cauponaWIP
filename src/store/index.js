@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import firebase from "firebase";
 import axios from "axios";
 import router from 'router';
 
