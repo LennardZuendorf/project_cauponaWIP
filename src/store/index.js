@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios";
 import router from 'router';
+import firebase from '@/firebase/';
 
 Vue.use(Vuex)
 
@@ -133,6 +134,22 @@ export default new Vuex.Store({
                 } catch (error) {
                     commit('setCloseCafeterias', []);
                 }
+            },
+
+            userLogout({ commit }) {
+                firebase
+                    .auth()
+                    .signOut()
+                    .then(() => {
+                        commit('setUser', null);
+                        commit('setIsAuthenticated', false);
+                        router.push('/');
+                    })
+                    .catch(() => {
+                        commit('setUser', null);
+                        commit('setIsAuthenticated', false);
+                        router.push('/');
+                    });
             },
 
             saveSelectedCafeteria({commit}, id){
