@@ -1,22 +1,32 @@
 <template>
   <v-app>
-    <TopToolbar></TopToolbar>
+    <Toolbar></Toolbar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+
+    <Navigation></Navigation>
   </v-app>
 </template>
 
 <script>
-import TopToolbar from './components/TopToolbar'
+
+import Toolbar from "@/components/Toolbar";
+import Navigation from "@/components/Navigation";
 
 export default {
-  name: 'App',
+  name: 'app',
 
-  components: {
-    TopToolbar,
+  components: {Navigation, Toolbar},
 
-  },
+  data: () => ({}),
 
-  data: () => ({
-    //
-  }),
+    beforeMount(){
+
+      this.$store.dispatch('loadCafeterias');
+      this.$store.dispatch('getCloseCafeterias');
+    }
 };
+
 </script>

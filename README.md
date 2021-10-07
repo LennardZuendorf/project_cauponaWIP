@@ -1,25 +1,24 @@
 # caupona
 
-Caupona is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id.
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## Authors
+### Compiles and minifies for production
+```
+npm run build
+```
 
-- [@LennardZuendorf](https://github.com/LennardZuendorf)
-- [@Gökalp Yiliminiz](https://github.com/Goekalp)
-- [@Samuel]()
+### Lints and fixes files
+```
+npm run lint
+```
 
-
-## Tech Stack
-
-**Client:** Vue, Vuetify
-
-**Server:** Firebase
-
-**Hosting:** Firebase Hosting
-
-
-## Appendix
-
-CAUPONA is a programming project developed as part of the course "Programming of mobile Apps". The course is part of HTW Berlins' Ba Sc. Business Computing.
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,37 +1,38 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
-import de from 'vuetify/lib/locale/de';
 
 Vue.use(Vuetify);
 
 export default new Vuetify({
-  theme: {
-      options: {
-        customProperties: true,
-      },
-    themes: {
-      light: {
-        primary: '#007BFF',
-        secondary: '#424242',
-        accent: '#82B1FF',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107'
-      },
-      dark: {
-        primary: '#007BFF',
-        secondary: '#424242',
-        accent: '#82B1FF',
-        error: '#FF5252',
-        info: '#2196F3',
-        success: '#4CAF50',
-        warning: '#FFC107'
-      }
-    },
-  },
-    lang: {
-      locales: { de },
-      current: 'de',
-    },
+    theme: { dark: false,
+        options: {
+            customProperties: true,
+        },
+        themes: {
+            light: {
+                primary: '#7CB342',
+                secondary: '#29B6F6',
+                accent: '#FFEE58',
+                error: '#FF8F00',
+                info: '#0277BD',
+                success: '#558B2F',
+                warning: '#F9A825',
+                background: '#FAFAFA',
+                background2: '#616161',
+                grey: '#E0E0E0'
+            },
+            dark: {
+                primary: '#7CB342',
+                secondary: '#29B6F6',
+                accent: '#FFEE58',
+                error: '#FF8F00',
+                info: '#0277BD',
+                success: '#558B2F',
+                warning: '#F9A825',
+                background: '#424242',
+                background2: '#616161',
+                grey: '#E0E0E0',
+            }
+        },
+    }
 });
