@@ -28,6 +28,11 @@ const routes = [
     path: '/menuTreskowallee',
     name: 'MenuTreskowallee',
     component: () => import(/* webpackChunkName: "menu" */ '../views/MenuTreskowallee.vue')
+  },
+  {
+    path: '/MapLoggedIn',
+    name: 'MapLoggedIn',
+    component: () => import(/* webpackChunkName: "menu" */ '../views/MapLoggedIn.vue')
   }
 ]
 
