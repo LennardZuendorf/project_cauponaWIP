@@ -1,57 +1,32 @@
 <template>
-  <div class="Menu">
+  <div class="MenuWilhelminenhof">
 
     <v-container fill-height>
-      <h1>Check out the Menü</h1>
-   <!--
-    <v-card
-        class="mx-auto"
-        width="95%"
-        height="90%"
-        elevation="3"
-        color="background"
-    >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h5 mb-1">
-            Check out the menu
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Your selected cafeteria:
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-card-text>
-        <FoodBox></FoodBox>
-      </v-card-text>
-
-    </v-card>
-    -->
+      <h1>MENSA WILHELMINENHOF</h1>
     </v-container>
 
     <v-container fill-height>
       <h1>TODAYS SPECIALS</h1>
       <div class="cardContainer">
-      <v-card v-for="today in anzTodays" :key="today"
-          class="mx-auto card"
+        <v-card v-for="today in anzTodays" :key="today"
+                class="mx-auto card"
         >
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="text-h5 mb-1">
-             Todays Special
-            </v-list-item-title>
-            <v-list-item-subtitle>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title class="text-h5 mb-1">
+                Todays Special
+              </v-list-item-title>
+              <v-list-item-subtitle>
 
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-        <v-card-text>
-          <FoodBox></FoodBox>
-        </v-card-text>
+          <v-card-text>
+            <FoodBox></FoodBox>
+          </v-card-text>
 
-      </v-card>
+        </v-card>
       </div>
     </v-container>
 
@@ -112,7 +87,7 @@
 import FoodBox from "@/components/Menu/FoodBox";
 
 export default {
-  name: "Menu",
+  name: "MenuWilhelminenhof",
 
   data(){
     return{anzMenues: 5,

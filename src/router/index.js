@@ -18,6 +18,11 @@ const routes = [
     path: '/menu',
     name: 'Menu',
     component: () => import(/* webpackChunkName: "menu" */ '../views/Menu.vue')
+  },
+  {
+    path: '/menuWilhelminenhof',
+    name: 'MenuWilhelminenhof',
+    component: () => import(/* webpackChunkName: "menu" */ '../views/MenuWilhelminenhof.vue')
   }
 ]
 
