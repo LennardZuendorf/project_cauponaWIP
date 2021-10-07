@@ -17,12 +17,16 @@ import Navigation from "@/components/Navigation";
 
 export default {
   name: 'app',
+
   components: {Navigation, Toolbar},
-  data: () => ({
-  }),
 
+  data: () => ({}),
 
+    beforeMount(){
 
+      this.$store.dispatch('loadCafeterias');
+      this.$store.dispatch('getCloseCafeterias');
+    }
 };
 
 </script>
