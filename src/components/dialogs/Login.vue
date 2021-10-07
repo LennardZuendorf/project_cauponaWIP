@@ -41,7 +41,7 @@
             <v-col cols="12">
               <v-text-field
                   v-model="email"
-                  :rules="[rules.required, rules.email]"
+                  :rules="emailRules"
                   label="e-mail"
               ></v-text-field>
             </v-col>
@@ -50,13 +50,13 @@
               <v-text-field
                   v-model="password"
                   :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                  :rules="[rules.required, rules.min]"
+                  :rules="passwordRules"
                   :type="show1 ? 'text' : 'password'"
                   name="input-10-1"
                   label="password"
                   hint="At least 8 characters"
                   counter
-                  @click:append="show1 = !show1"
+                  @click:append="show = !show"
               ></v-text-field>
             </v-col>
 
@@ -68,15 +68,6 @@
                   :disabled="invalid"
               >
                 login
-              </v-btn>
-            </v-col>
-
-            <v-col cols="4">
-              <v-btn
-                  class="mr-4"
-                  color="info"
-              >
-                register
               </v-btn>
             </v-col>
 
@@ -98,29 +89,41 @@
 </template>
 
 <script>
-import Register from "@/components/dialogs/Register";
 
 export default {
   name: "Login",
-  components: {Register},
   data() {
     return {
       dialog: false,
       notifications: false,
       sound: true,
       widgets: false,
-      show1: false,
-      show2: true,
-      show3: false,
-      show4: false,
-      password: 'Password',
-      rules: {
-        required: value => !!value || 'Required.',
-        min: v => v.length >= 8 || 'Min 8 characters',
-        emailMatch: () => (`The email and password you entered don't match`),
-      },
+      show: false,
+      valid: false,
+      email: '',
+      password: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid'
+      ],
+      passwordRules: [
+        v => !!v || 'Password is required',
+        v =>
+            v.length >= 6 ||
+            'Password must be greater than 6 characters'
+      ],
+      methods: {
+        submit() {
+          if (this.$refs.form.validate()) {
+            this.$store.dispatch('userLogin', {
+              email: this.email,
+              password: this.password
+            });
+          }
+        }
+      }
     }
-  },
+  }
 }
 
 </script>
