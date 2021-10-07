@@ -9,7 +9,7 @@ Caupona is the companion for cantines of the Studentenwerk Berlin, giving inform
 
 - [@LennardZuendorf](https://github.com/LennardZuendorf)
 - [@Gökalp Yiliminiz](https://github.com/Goekalp)
-- [@Samuel]()
+- [@Samuel Gehring](https://github.com/gehrisam)
 
   
 ## Tech Stack
