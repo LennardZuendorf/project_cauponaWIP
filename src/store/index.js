@@ -11,13 +11,10 @@ export default new Vuex.Store({
         state: {
             selectedMenu:[],
             selectedCafeteria: null,
-
             closeCafeterias:[],
             cafeterias: [],
-
             userLocation: [],
-
-            favoriteCafeterias: [],
+            favoriteCafeteria: [],
             favoriteFood: [],
             apiUrl: "https://openmensa.org/api/v2/canteens/",
             user: null,
@@ -112,6 +109,8 @@ export default new Vuex.Store({
             },
 
             async getCloseCafeterias({ state, commit }) {
+                let payload;
+
                 navigator.geolocation.getCurrentPosition(
                     position => {
                         payload.lat = position.coords.latitude;
@@ -120,10 +119,13 @@ export default new Vuex.Store({
                         commit('setUserLocation', payload);
                     },
                     error => {
-                        commit('setUserLocation', []);
+                        payload.lat = 52.492681;
+                        payload.lng = 13.524759;
+
+                        commit('setUserLocation', payload);
                     })
 
-                let payload;
+
                 let url = `${state.apiUrl}`+"near[lat]="+`${state.userLocation.lat}`+"&near[lng]="+`${state.userLocation.lng}`+"&near[dist]=7"
 
                 try {
