@@ -31,9 +31,8 @@
 
 <script>
 import FoodBox from "@/components/Menu/FoodBox";
-
 export default {
-  name: "Menu"
+  name: "Menu",   components: {FoodBox},
 }
 </script>
 
