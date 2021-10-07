@@ -27,10 +27,8 @@
 </template>
 
 <script>
-import MapBox from "@/components/Map/MapBox";
 export default {
   name: "Map",
-  components: {MapBox},
 
 
   data(){

@@ -8,12 +8,7 @@
             {{cafeteria.name}}
           </v-list-item-title>
           <v-list-item-subtitle>
-            <v-btn
 
-                @click="selectionMade({{cafeteria.id}})"
-            >
-
-            </v-btn>
           </v-list-item-subtitle>
 
         </v-list-item>

@@ -1,6 +1,6 @@
 <template>
     <span>
-        <v-navigation-drawer app v-model="drawer" color="primary" dark disable-resize-watcher>
+    <v-navigation-drawer app v-model="drawer" color="primary" dark disable-resize-watcher>
           <v-container align-content="start" full-height>
 
             <v-row>
@@ -50,7 +50,7 @@
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
 
-          <v-toolbar-title>
+      <v-toolbar-title>
             <v-img :src="require('@/assets/caupona_logo_long_white.svg')" max-height="75px"></v-img>
           </v-toolbar-title>
           <v-spacer></v-spacer>

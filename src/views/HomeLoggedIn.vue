@@ -64,10 +64,9 @@
 </template>
 
 <script>
-import MapBox from "@/components/Map/MapBox";
+
 export default {
   name: "HomeLoggedIn",
-  components: {MapBox},
 
   data(){
     return{anzFavCantines: 4,
