@@ -23,6 +23,11 @@ const routes = [
     path: '/menuWilhelminenhof',
     name: 'MenuWilhelminenhof',
     component: () => import(/* webpackChunkName: "menu" */ '../views/MenuWilhelminenhof.vue')
+  },
+  {
+    path: '/menuTreskowallee',
+    name: 'MenuTreskowallee',
+    component: () => import(/* webpackChunkName: "menu" */ '../views/MenuTreskowallee.vue')
   }
 ]
 
