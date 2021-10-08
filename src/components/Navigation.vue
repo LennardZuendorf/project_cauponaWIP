@@ -3,9 +3,10 @@
       :value="value"
       color="primary"
       grow
+      fixed
   >
     <v-btn @click="$router.push('menu')">
-      <span>MENU</span>
+      <span>MENUS</span>
       <v-icon>mdi-food</v-icon>
     </v-btn>
 
@@ -15,8 +16,8 @@
     </v-btn>
 
     <v-btn @click="$router.push('list')">
-      <span>LIST</span>
-      <v-icon>mdi-Format-List-Bulleted-Type</v-icon>
+      <span>CANTINES</span>
+      <v-icon>mdi-format-list-text</v-icon>
     </v-btn>
 
   </v-bottom-navigation>
