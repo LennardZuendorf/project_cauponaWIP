@@ -9,13 +9,14 @@ export default new Vuex.Store({
 
         state: {
             selectedMenu:[],
-            selectedCafeteria: null,
-            closeCafeterias:[],
-            cafeterias: [],
-            userLocation: [],
+            selectedCafeteria: [],
+            closeCantines:[],
+            allCantines: [],
+            userLocationLat: [],
+            userLocationLng: [],
             favoriteCafeteria: [],
             favoriteFood: [],
-            apiUrl: "https://openmensa.org/api/v2/canteens/",
+            apiUrl: "https://openmensa.org/api/v2/canteens",
             user: null,
             isAuthenticated: false
         },
@@ -30,8 +31,8 @@ export default new Vuex.Store({
                 state.isAuthenticated = payload;
             },
 
-            setCafeterias(state, payload){
-                state.cafeterias = payload;
+            setCantines(state, payload){
+                state.allCantines = payload;
             },
 
             setMenu(state, payload){
@@ -43,82 +44,98 @@ export default new Vuex.Store({
             },
 
             setCloseCafeterias(state, payload){
-              state.closeCafeterias = payload;
+              state.closeCantines = payload;
             },
 
-            setUserLocation(state, payload){
-                state.userLocation.lng = payload.lng;
-                state.userLocation.lat = payload.lat
-            }
+            setUserLat(state, payload){
+                state.userLocationLat = payload;
+            },
 
+            setUserLng(state, payload){
+                state.userLocationLng = payload;
+            }
         },
 
         actions: {
 
-           async loadMenu({ state, commit }, date) {
+            loadMenu ({ commit, state }, id) {
+                let today = new Date();
+                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-               let url = `${state.apiUrl}` + `${state.selectedCafeteria}`+"/days/"+date+"/meals"
+                let url = `${state.apiUrl}`+date+"/days/"+id+"meals"
 
-                try {
-                    let response = await axios.get(url);
-                    commit('setMenu', response.data);
-                } catch (error) {
-                    commit('setMenu', []);
-                }
-            },
-
-            async loadCafeterias({ state, commit }) {
-                try {
-                    let response = await axios.get(`${state.apiUrl}`);
-                    commit('setCafeterias', response.data);
-                } catch (error) {
-                    commit('setCafeterias', []);
-                }
-            },
-
-            async getCloseCafeterias({ state, commit }) {
-                let payload;
-
-                navigator.geolocation.getCurrentPosition(
-                    position => {
-                        payload.lat = position.coords.latitude;
-                        payload.lng = position.coords.longitude;
-
-                        commit('setUserLocation', payload);
-                    },
-                    error => {
-                        payload.lat = 52.492681;
-                        payload.lng = 13.524759;
-
-                        commit('setUserLocation', payload);
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(menu => {
+                        console.log(menu);
+                        commit('setMenu', menu);
+                        console.log("menu for selected cantine fetched");
                     })
 
+            },
 
-                let url = `${state.apiUrl}`+"near[lat]="+`${state.userLocation.lat}`+"&near[lng]="+`${state.userLocation.lng}`+"&near[dist]=7"
+            loadCafeterias ({ commit, state }) {
+                axios
+                    .get(`${state.apiUrl}`)
+                    .then(response => response.data)
+                    .then(cantines => {
+                        commit('setCantines', cantines)
+                        console.log("all cantines succesfully loaded")
+                    })
+            },
 
-                try {
-                    let response = await axios.get(url);
-                    commit('setCloseCafeterias', response.data);
-                } catch (error) {
-                    commit('setCloseCafeterias', []);
+            //inspired by https://developer.mozilla.org/de/docs/Web/API/Geolocation/getCurrentPosition
+            getUserLocation({commit}){
+                commit('setUserLat', 52.492681);
+                commit('setUserLng', 13.524759);
+            },
+
+            /*
+            getUserLocation({ state, commit }) {
+
+                function success(pos) {
+                    let crd = pos.coords;
+
+                    commit('setUserLat', crd.latitude);
+                    commit('setUserLng', crd.longitude);
+
+                    console.log("user location set at:"+ `${state.userLocationLat}`+" and "+ `${state.userLocationLng}`)
                 }
+
+                function error(err) {
+
+                    commit('setUserLat', 52.492681);
+                    commit('setUserLng', 13.524759);
+
+                    console.log("user location set default (52.492681, 13.524759)")
+                    console.warn(`ERROR(${err.code}): ${err.message}`);
+                }
+
+                navigator.geolocation.getCurrentPosition(success, error, {timeout:10});
+
+            },
+           */
+
+            loadNearbyCantines ({ commit, state }) {
+                let url = `${state.apiUrl}`+"?near[lat]="+state.userLocationLat+"&near[lng]="+state.userLocationLng+"&near[dist]=8"
+                console.log(url);
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(cantines => {
+                        console.log("nearby cantines are" +cantines);
+                        commit('setCloseCafeterias', cantines);
+                        commit('selectCafeteria', cantines[0]);
+                        console.log("set"+cantines[0]+" as new selected cafeteria");
+                    })
             },
 
-            saveSelectedCafeteria({commit}, id){
-                commit('selectCafeteria', id);
-            },
-
-            loadFavorites() {
-              //TODO Add API call to Call Favorites from Firebase
-
-            },
-
-            saveFavorites(){
-              //TODO Add function that saves favorites to Firebase
+            getOpen ({ commit, state}) {
+                let url = `${state.apiUrl}`+"/"+"/days/"+""+"meals";
             }
-          },
+        },
 
-    modules: {
-
-    }
+    modules: {}
 })
