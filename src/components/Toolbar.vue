@@ -1,13 +1,15 @@
 <template>
     <span>
     <v-navigation-drawer app v-model="drawer" color="primary" dark disable-resize-watcher>
-          <v-container align-content="start" full-height>
+          <v-container align-content="center" full-height>
 
-            <v-row>
+            <v-row >
 
-              <v-col cols="12">
-                <img src="src/assets/caupona_logo_long_white.svg" alt="caupona logo">
-                <v-spacer></v-spacer>
+              <v-col cols="12"
+                height="10%"
+                width="100%"
+              >
+                <logo-long-white></logo-long-white>
               </v-col>
 
               <v-col cols="12">
@@ -57,7 +59,12 @@
           <v-spacer></v-spacer>
 
           <v-toolbar-title>
-            CAUPONA
+            <v-col cols="12"
+                   height="10%"
+                   width="100%"
+            >
+              <logo-long-white></logo-long-white>
+            </v-col>
           </v-toolbar-title>
           <v-spacer></v-spacer>
         </v-app-bar>
@@ -70,10 +77,11 @@ import About from "@/components/dialogs/About";
 import Login from "@/components/dialogs/Login";
 import Settings from "@/components/dialogs/Settings";
 import Register from "@/components/dialogs/Register";
+import LogoLongWhite from "@/components/logos/LogoLongWhite";
 
 export default {
   name: 'Toolbar',
-  components: {Register, Login, About, Settings},
+  components: {Register, Login, About, Settings, LogoLongWhite},
 
   data() {
     return {
