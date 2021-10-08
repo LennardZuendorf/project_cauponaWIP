@@ -11,35 +11,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   {
-    path: '/homeLoggedIn',
-    name: 'HomeLoggedIn',
-    component: () => import(/* webpackChunkName: "home" */ '../views/HomeLoggedIn.vue')
+    path:'/home',
+    name:'Home',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   {
-    path: '/map',
-    name: 'Map',
-    component: () => import(/* webpackChunkName: "map" */ '../views/MensaOverview/Map.vue')
+    path: '/list',
+    name: 'List',
+    component: () => import(/* webpackChunkName: "map" */ '../views/MensaOverview/List.vue')
   },
   {
     path: '/menu',
     name: 'Menu',
     component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/Menu.vue')
   },
-  {
-    path: '/menuWilhelminenhof',
-    name: 'MenuWilhelminenhof',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/MenuWilhelminenhof.vue')
-  },
-  {
-    path: '/menuTreskowallee',
-    name: 'MenuTreskowallee',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/MenuTreskowallee.vue')
-  },
-  {
-    path: '/MapLoggedIn',
-    name: 'MapLoggedIn',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/MensaOverview/MapLoggedIn.vue')
-  }
 ]
 
 const router = new VueRouter({
