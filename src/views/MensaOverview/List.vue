@@ -1,49 +1,36 @@
 <template>
-  <div class="Map">
-    <v-container fill-height>
+  <div class="List">
+    <v-container full-height>
 
-      <v-card
-          class="mx-auto"
-          width="95%"
-          height="45%"
-          elevation="3"
-          color="background"
-      >
+      <v-col>
+        <v-card
+            elevation="3"
+            color="background"
+        >
 
-        <v-card-title>
-          Check out all cafeterias:
-        </v-card-title>
+          <v-card-title>
+            see nearby cantines
+          </v-card-title>
 
-        <MensaListNearby></MensaListNearby>
+          <v-card-subtitle>
+            Please allow us access to your location!
+          </v-card-subtitle>
 
-      </v-card>
+            <MensaListNearby></MensaListNearby>
 
-      <v-card
-          class="mx-auto"
-          width="95%"
-          height="45%"
-          elevation="3"
-          color="background"
-      >
-        <v-card-title>
-          Check out all cafeterias:
-        </v-card-title>
-
-        <MensaList></MensaList>
-
-      </v-card>
+        </v-card>
+      </v-col>
 
     </v-container>
   </div>
 </template>
 
 <script>
-import MensaList from "@/components/MensaOverview/MensaList";
 import MensaListNearby from "@/components/MensaOverview/MensaListNearby";
 
 export default {
-  name: "Map",
-  components: {MensaListNearby, MensaList}
+  name: "List",
+  components: {MensaListNearby}
 }
 </script>
 
