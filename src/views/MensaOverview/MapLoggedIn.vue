@@ -21,7 +21,7 @@
           </v-list-item>
 
           <v-card-text>
-            <FoodBox></FoodBox>
+            <MensaListNearby></MensaListNearby>
           </v-card-text>
 
         </v-card>
@@ -55,9 +55,11 @@
 </template>
 
 <script>
+import MensaListNearby from "@/components/MensaOverview/MensaListNearby";
+
 export default {
   name: "MapLoggedIn",
-
+  components: {MensaListNearby},
   data(){
     return {anzCantines: 3,
             anzFavCantines: 1}

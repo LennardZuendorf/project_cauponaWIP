@@ -18,27 +18,27 @@ const routes = [
   {
     path: '/map',
     name: 'Map',
-    component: () => import(/* webpackChunkName: "map" */ '../views/Map.vue')
+    component: () => import(/* webpackChunkName: "map" */ '../views/MensaOverview/Map.vue')
   },
   {
     path: '/menu',
     name: 'Menu',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu.vue')
+    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/Menu.vue')
   },
   {
     path: '/menuWilhelminenhof',
     name: 'MenuWilhelminenhof',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/MenuWilhelminenhof.vue')
+    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/MenuWilhelminenhof.vue')
   },
   {
     path: '/menuTreskowallee',
     name: 'MenuTreskowallee',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/MenuTreskowallee.vue')
+    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/MenuTreskowallee.vue')
   },
   {
     path: '/MapLoggedIn',
     name: 'MapLoggedIn',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/MapLoggedIn.vue')
+    component: () => import(/* webpackChunkName: "menu" */ '../views/MensaOverview/MapLoggedIn.vue')
   }
 ]
 
