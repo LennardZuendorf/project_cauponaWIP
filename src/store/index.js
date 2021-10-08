@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios";
 import router from 'router';
-import firebase from '@/firebase/';
 
 Vue.use(Vuex)
 
@@ -56,36 +55,6 @@ export default new Vuex.Store({
 
         actions: {
 
-            userRegister({ commit }, { email, password }) {
-              firebase
-                  .auth()
-                  .createUserWithEmailAndPassword(email, password)
-                  .then(user => {
-                    commit('setUser', user);
-                    commit('setIsAuthenticated', true);
-                  })
-                  .catch(() => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                  });
-              router.push('/home');
-            },
-
-            userLogin({ commit }, { email, password }) {
-              firebase
-                  .auth()
-                  .signInWithEmailAndPassword(email, password)
-                  .then(user => {
-                    commit('setUser', user);
-                    commit('setIsAuthenticated', true);
-                  })
-                  .catch(() => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                  });
-              router.push('/home');
-            },
-
            async loadMenu({ state, commit }, date) {
 
                let url = `${state.apiUrl}` + `${state.selectedCafeteria}`+"/days/"+date+"/meals"
@@ -99,7 +68,6 @@ export default new Vuex.Store({
             },
 
             async loadCafeterias({ state, commit }) {
-
                 try {
                     let response = await axios.get(`${state.apiUrl}`);
                     commit('setCafeterias', response.data);
@@ -134,22 +102,6 @@ export default new Vuex.Store({
                 } catch (error) {
                     commit('setCloseCafeterias', []);
                 }
-            },
-
-            userLogout({ commit }) {
-                firebase
-                    .auth()
-                    .signOut()
-                    .then(() => {
-                        commit('setUser', null);
-                        commit('setIsAuthenticated', false);
-                        router.push('/');
-                    })
-                    .catch(() => {
-                        commit('setUser', null);
-                        commit('setIsAuthenticated', false);
-                        router.push('/');
-                    });
             },
 
             saveSelectedCafeteria({commit}, id){
