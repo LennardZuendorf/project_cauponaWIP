@@ -2,11 +2,12 @@
   <v-container fill-height>
     <v-row align-content="center">
 
-      <v-col cols="12">
-        <v-img src="./src/assets/icon_cap"
-               max-height="25%"
-               max-width="25%"
-        ></v-img>
+      <v-col
+          cols="12"
+          height="25%"
+          width="25%"
+      >
+        <IconCap></IconCap>
       </v-col>
 
       <v-col cols="12">
@@ -24,8 +25,11 @@
 </template>
 
 <script>
+import IconCap from "@/components/logos/IconCap";
+
 export default {
-  name: "ErrorMessage"
+  name: "ErrorMessage",
+  components:{IconCap}
 }
 </script>
 
