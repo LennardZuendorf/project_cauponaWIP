@@ -54,10 +54,11 @@ import { mapState } from 'vuex';
 
 export default {
 
-  name: 'FoodBox',
+  name: 'MensaListMini',
   computed: mapState([
     'closeCantines'
-  ])
+  ]),
+
 }
 
 </script>
