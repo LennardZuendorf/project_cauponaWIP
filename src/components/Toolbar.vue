@@ -32,6 +32,10 @@
                 <v-spacer></v-spacer>
               </v-col>
 
+                </template>
+
+              <template v-if="!loggedIn">
+
               <v-col cols="12">
                 <v-spacer></v-spacer>
                 <v-btn
@@ -40,6 +44,7 @@
                       text
                       block
                       large
+                      onlick="this.$router.push('/logout')"
                 >
                     LOGOUT
                 </v-btn>
@@ -51,7 +56,9 @@
                 <v-spacer></v-spacer>
               </v-col>
 
-              -->
+             </template>
+             -->
+
 
             </v-row>
           </v-container>
@@ -82,6 +89,7 @@ import Login from "@/components/dialogs/Login";
 import Settings from "@/components/dialogs/Settings";
 import Register from "@/components/dialogs/Register";
 import LogoLongWhite from "@/components/logos/LogoLongWhite";
+import auth from "@/auth";
 
 export default {
   name: 'Toolbar',
@@ -89,10 +97,16 @@ export default {
 
   data() {
     return {
-      drawer: false
-    };
-  }
-};
+      drawer: false,
+      loggedIn: auth.loggedIn()
+        }
+      },
+      created () {
+        auth.onChange = loggedIn => {
+          this.loggedIn = loggedIn
+        }
+      }
+    }
 </script>
 
 <style scoped>
