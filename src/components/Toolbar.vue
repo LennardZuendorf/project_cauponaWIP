@@ -18,6 +18,8 @@
                 <v-spacer></v-spacer>
               </v-col>
 
+              <!--
+
               <v-col cols="12">
                 <v-spacer></v-spacer>
                 <Login></Login>
@@ -48,6 +50,8 @@
                 <Settings></Settings>
                 <v-spacer></v-spacer>
               </v-col>
+
+              -->
 
             </v-row>
           </v-container>
