@@ -47,8 +47,8 @@
       </v-col>
 
     </v-container>
-
   </div>
+
 </template>
 
 <script>
