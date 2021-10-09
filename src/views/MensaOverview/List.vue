@@ -16,7 +16,7 @@
             Please allow us access to your location!
           </v-card-subtitle>
 
-            <MensaListNearby></MensaListNearby>
+          <MensaListNearby></MensaListNearby>
 
         </v-card>
       </v-col>
@@ -27,10 +27,11 @@
 
 <script>
 import MensaListNearby from "@/components/MensaOverview/MensaListNearby";
+import MensaListFavorite from "@/components/MensaOverview/MensaListFavorite";
 
 export default {
   name: "List",
-  components: {MensaListNearby}
+  components: {MensaListNearby, MensaListFavorite}
 }
 </script>
 
