@@ -54,14 +54,13 @@
 <script>
 import { mapState } from 'vuex';
 
-import MensaListNearby from "@/components/MensaOverview/MensaListNearbyAuth";
 import FoodBoxMini from "@/components/Menu/FoodBoxMini";
 import MensaListMini from "@/components/MensaOverview/MensaListMini";
 
 
 export default {
   name: "Home",
-  components: {FoodBoxMini, MensaListNearby, MensaListMini},
+  components: {FoodBoxMini, MensaListMini},
 
   computed: mapState([
     'closeCantines', 'selectedCafeteria'
