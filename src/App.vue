@@ -17,13 +17,23 @@ import Toolbar from "@/components/Toolbar";
 import Navigation from "@/components/Navigation";
 import {mapState} from "vuex";
 import LogoLong from "@/components/logos/LogoLong";
+import auth from './auth'
 
 export default {
   name: 'app',
 
   components: {LogoLong, Navigation, Toolbar},
 
-  data: () => ({}),
+  data () {
+      return {
+        loggedIn: auth.loggedIn()
+      }
+    },
+    created () {
+      auth.onChange = loggedIn => {
+        this.loggedIn = loggedIn
+      }
+    },
   computed: mapState([
     'closeCantines', 'selectedCafeteria'
   ]),
@@ -32,6 +42,7 @@ export default {
     this.$store.dispatch('loadCafeterias');
     this.$store.dispatch('getUserLocation');
     this.$store.dispatch('loadNearbyCantines')
+    this.$store.dispatch('loadFavorites')
   }
 };
 
