@@ -10,6 +10,7 @@ export default new Vuex.Store({
         state: {
             selectedMenu:[],
             selectedCafeteria: [],
+            selectedIsOpen: false,
             closeCantines:[],
             allCantines: [],
             userLocationLat: [],
@@ -25,6 +26,10 @@ export default new Vuex.Store({
 
             setUser(state, payload) {
                 state.user = payload;
+            },
+
+            setOpen(state, payload) {
+                state.selectedIsOpen = payload;
             },
 
             setIsAuthenticated(state, payload) {
@@ -58,23 +63,6 @@ export default new Vuex.Store({
 
         actions: {
 
-            loadMenu ({ commit, state }, id) {
-                let today = new Date();
-                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-
-                let url = `${state.apiUrl}`+date+"/days/"+id+"meals"
-
-                axios
-                    .get(url)
-                    .then(response => response.data)
-                    .then(menu => {
-                        console.log(menu);
-                        commit('setMenu', menu);
-                        console.log("menu for selected cantine fetched");
-                    })
-
-            },
-
             loadCafeterias ({ commit, state }) {
                 axios
                     .get(`${state.apiUrl}`)
@@ -85,10 +73,11 @@ export default new Vuex.Store({
                     })
             },
 
+            //hard coded because of bug
             //inspired by https://developer.mozilla.org/de/docs/Web/API/Geolocation/getCurrentPosition
             getUserLocation({commit}){
-                commit('setUserLat', 52.492681);
-                commit('setUserLng', 13.524759);
+                commit('setUserLat', 52.519497922);
+                commit('setUserLng', 13.407165038);
             },
 
             /*
@@ -117,8 +106,9 @@ export default new Vuex.Store({
             },
            */
 
-            loadNearbyCantines ({ commit, state }) {
+            loadNearbyCantines ({ commit, state, dispatch }) {
                 let url = `${state.apiUrl}`+"?near[lat]="+state.userLocationLat+"&near[lng]="+state.userLocationLng+"&near[dist]=8"
+
                 console.log(url);
 
                 axios
@@ -128,12 +118,73 @@ export default new Vuex.Store({
                         console.log("nearby cantines are" +cantines);
                         commit('setCloseCafeterias', cantines);
                         commit('selectCafeteria', cantines[0]);
+                        dispatch('getOpenInit')
+                        dispatch('loadMenuInit')
+
                         console.log("set"+cantines[0]+" as new selected cafeteria");
                     })
             },
 
-            getOpen ({ commit, state}) {
-                let url = `${state.apiUrl}`+"/"+"/days/"+""+"meals";
+            getOpen ({ commit, state}, id) {
+                const today = new Date()
+                let url = `${state.apiUrl}`+"/"+id+"/days/2019-11-18";
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(isOpen => {
+                        commit('setOpen', isOpen);
+                        console.log("cantine is open?"+isOpen);
+                    })
+            },
+
+            loadMenu ({ commit, state }, id) {
+                const today = new Date()
+                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                let url = "/"+id+"/days/"+"2019-11-18"+"/meals"
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(menu => {
+                        console.log(menu);
+                        commit('setMenu', menu);
+                        console.log(menu);
+                    })
+
+            },
+
+            selectCantine({commit, state, dispatch}, cantine){
+                commit('selectCafeteria', cantine);
+                dispatch('loadMenu', cantine.id);
+                dispatch('getOpen', cantine.id);
+            },
+
+            //hard coded for init and testing
+            getOpenInit ({ commit}) {
+                let url = "https://openmensa.org/api/v2/canteens/30/days/2019-11-18/meals"
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(isOpen => {
+                        commit('setOpen', isOpen);
+                        console.log("cantine is open?"+isOpen);
+                    })
+            },
+
+            //hard coded for init and testing
+            loadMenuInit ({ commit}) {
+                let url = "https://openmensa.org/api/v2/canteens/30/days/2019-11-18/meals"
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(menu => {
+                        console.log(menu);
+                        commit('setMenu', menu);
+                        console.log(menu);
+                    })
             }
         },
 
