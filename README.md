@@ -14,11 +14,13 @@ Caupona is the companion for cantines of the Studentenwerk Berlin, giving inform
   
 ## Tech Stack
 
-**Client:** Vue, Vuetify
+**Client:** Vue.js, Vuetify
 
-**Server:** Firebase
+**Server:** Express.js
 
-**Hosting:** Firebase Hosting
+**Database:** PostgreSQL
+
+**Hosting:** Heroku
 
   
 ## Appendix
