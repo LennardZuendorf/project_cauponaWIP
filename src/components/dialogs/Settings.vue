@@ -155,20 +155,10 @@ export default {
       notifications: false,
       sound: true,
       widgets: false,
-      foodSelect: ['Vuetify', 'Programming'],
-      foodItems: [
-        'Programming',
-        'Design',
-        'Vue',
-        'Vuetify',
-      ],
-      CafeteriaSelect: ['Vuetify', 'Programming'],
-      CafeteriaItems: [
-        'Programming',
-        'Design',
-        'Vue',
-        'Vuetify',
-      ],
+      foodSelect: [],
+      foodItems: [],
+      CafeteriaSelect: [],
+      CafeteriaItems: [],
       show1: false,
       show2: true,
       show3: false,
@@ -180,6 +170,10 @@ export default {
         emailMatch: () => (`The email and password you entered don't match`),
       },
     }
+  },
+
+  methods: {
+
   }
 }
 

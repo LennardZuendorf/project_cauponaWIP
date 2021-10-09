@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import firebase from "firebase";
 import axios from "axios";
 import router from 'router';
 
@@ -10,13 +9,15 @@ export default new Vuex.Store({
 
         state: {
             selectedMenu:[],
-            selectedCafeteria: null,
-            closeCafeterias:[],
-            cafeterias: [],
-            userLocation: [],
+            selectedCafeteria: [],
+            selectedIsOpen: false,
+            closeCantines:[],
+            allCantines: [],
+            userLocationLat: [],
+            userLocationLng: [],
             favoriteCafeteria: [],
             favoriteFood: [],
-            apiUrl: "https://openmensa.org/api/v2/canteens/",
+            apiUrl: "https://openmensa.org/api/v2/canteens",
             user: null,
             isAuthenticated: false
         },
@@ -27,12 +28,16 @@ export default new Vuex.Store({
                 state.user = payload;
             },
 
+            setOpen(state, payload) {
+                state.selectedIsOpen = payload;
+            },
+
             setIsAuthenticated(state, payload) {
                 state.isAuthenticated = payload;
             },
 
-            setCafeterias(state, payload){
-                state.cafeterias = payload;
+            setCantines(state, payload){
+                state.allCantines = payload;
             },
 
             setMenu(state, payload){
@@ -44,113 +49,144 @@ export default new Vuex.Store({
             },
 
             setCloseCafeterias(state, payload){
-              state.closeCafeterias = payload;
+              state.closeCantines = payload;
             },
 
-            setUserLocation(state, payload){
-                state.userLocation.lng = payload.lng;
-                state.userLocation.lat = payload.lat
-            }
+            setUserLat(state, payload){
+                state.userLocationLat = payload;
+            },
 
+            setUserLng(state, payload){
+                state.userLocationLng = payload;
+            }
         },
 
         actions: {
 
-            userRegister({ commit }, { email, password }) {
-              firebase
-                  .auth()
-                  .createUserWithEmailAndPassword(email, password)
-                  .then(user => {
-                    commit('setUser', user);
-                    commit('setIsAuthenticated', true);
-                  })
-                  .catch(() => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                  });
-              router.push('/home');
+            loadCafeterias ({ commit, state }) {
+                axios
+                    .get(`${state.apiUrl}`)
+                    .then(response => response.data)
+                    .then(cantines => {
+                        commit('setCantines', cantines)
+                        console.log("all cantines succesfully loaded")
+                    })
             },
 
-            userLogin({ commit }, { email, password }) {
-              firebase
-                  .auth()
-                  .signInWithEmailAndPassword(email, password)
-                  .then(user => {
-                    commit('setUser', user);
-                    commit('setIsAuthenticated', true);
-                  })
-                  .catch(() => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                  });
-              router.push('/home');
+            //hard coded because of bug
+            //inspired by https://developer.mozilla.org/de/docs/Web/API/Geolocation/getCurrentPosition
+            getUserLocation({commit}){
+                commit('setUserLat', 52.519497922);
+                commit('setUserLng', 13.407165038);
             },
 
-           async loadMenu({ state, commit }, date) {
+            /*
+            getUserLocation({ state, commit }) {
 
-               let url = `${state.apiUrl}` + `${state.selectedCafeteria}`+"/days/"+date+"/meals"
+                function success(pos) {
+                    let crd = pos.coords;
 
-                try {
-                    let response = await axios.get(url);
-                    commit('setMenu', response.data);
-                } catch (error) {
-                    commit('setMenu', []);
+                    commit('setUserLat', crd.latitude);
+                    commit('setUserLng', crd.longitude);
+
+                    console.log("user location set at:"+ `${state.userLocationLat}`+" and "+ `${state.userLocationLng}`)
                 }
-            },
 
-            async loadCafeterias({ state, commit }) {
+                function error(err) {
 
-                try {
-                    let response = await axios.get(`${state.apiUrl}`);
-                    commit('setCafeterias', response.data);
-                } catch (error) {
-                    commit('setCafeterias', []);
+                    commit('setUserLat', 52.492681);
+                    commit('setUserLng', 13.524759);
+
+                    console.log("user location set default (52.492681, 13.524759)")
+                    console.warn(`ERROR(${err.code}): ${err.message}`);
                 }
+
+                navigator.geolocation.getCurrentPosition(success, error, {timeout:10});
+
+            },
+           */
+
+            loadNearbyCantines ({ commit, state, dispatch }) {
+                let url = `${state.apiUrl}`+"?near[lat]="+state.userLocationLat+"&near[lng]="+state.userLocationLng+"&near[dist]=8"
+
+                console.log(url);
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(cantines => {
+                        console.log("nearby cantines are" +cantines);
+                        commit('setCloseCafeterias', cantines);
+                        commit('selectCafeteria', cantines[0]);
+                        dispatch('getOpenInit')
+                        dispatch('loadMenuInit')
+
+                        console.log("set"+cantines[0]+" as new selected cafeteria");
+                    })
             },
 
-            async getCloseCafeterias({ state, commit }) {
-                let payload;
+            getOpen ({ commit, state}, id) {
+                const today = new Date()
+                let url = `${state.apiUrl}`+"/"+id+"/days/2019-11-18";
 
-                navigator.geolocation.getCurrentPosition(
-                    position => {
-                        payload.lat = position.coords.latitude;
-                        payload.lng = position.coords.longitude;
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(isOpen => {
+                        commit('setOpen', isOpen);
+                        console.log("cantine is open?"+isOpen);
+                    })
+            },
 
-                        commit('setUserLocation', payload);
-                    },
-                    error => {
-                        payload.lat = 52.492681;
-                        payload.lng = 13.524759;
+            loadMenu ({ commit, state }, id) {
+                const today = new Date()
+                let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                let url = "/"+id+"/days/"+"2019-11-18"+"/meals"
 
-                        commit('setUserLocation', payload);
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(menu => {
+                        console.log(menu);
+                        commit('setMenu', menu);
+                        console.log(menu);
                     })
 
-
-                let url = `${state.apiUrl}`+"near[lat]="+`${state.userLocation.lat}`+"&near[lng]="+`${state.userLocation.lng}`+"&near[dist]=7"
-
-                try {
-                    let response = await axios.get(url);
-                    commit('setCloseCafeterias', response.data);
-                } catch (error) {
-                    commit('setCloseCafeterias', []);
-                }
             },
 
-            saveSelectedCafeteria({commit}, id){
-                commit('selectCafeteria', id);
+            selectCantine({commit, state, dispatch}, cantine){
+                commit('selectCafeteria', cantine);
+                dispatch('loadMenu', cantine.id);
+                dispatch('getOpen', cantine.id);
             },
 
-            loadFavorites() {
-              //TODO Add API call to Call Favorites from Firebase
+            //hard coded for init and testing
+            getOpenInit ({ commit}) {
+                let url = "https://openmensa.org/api/v2/canteens/30/days/2019-11-18/meals"
 
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(isOpen => {
+                        commit('setOpen', isOpen);
+                        console.log("cantine is open?"+isOpen);
+                    })
             },
 
-            saveFavorites(){
-              //TODO Add function that saves favorites to Firebase
+            //hard coded for init and testing
+            loadMenuInit ({ commit}) {
+                let url = "https://openmensa.org/api/v2/canteens/30/days/2019-11-18/meals"
+
+                axios
+                    .get(url)
+                    .then(response => response.data)
+                    .then(menu => {
+                        console.log(menu);
+                        commit('setMenu', menu);
+                        console.log(menu);
+                    })
             }
-          },
+        },
 
-    modules: {
-
-    }
+    modules: {}
 })

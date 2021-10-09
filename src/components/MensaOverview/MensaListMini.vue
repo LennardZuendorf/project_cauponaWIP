@@ -1,54 +1,66 @@
 <template>
   <v-container>
 
-    <v-row>
+    <v-list two-line>
+      <v-list-item-group
+          multiple
+      >
+        <v-list-item :key="closeCantines[0].name">
 
-      <v-col cols="4" v-for="item in menu">
-        <v-card>
+            <v-list-item-content>
+                <v-list-item-title
+                    v-text="closeCantines[0].name">
+                </v-list-item-title>
 
-          <v-card-title>
-            {{item.name}}
-          </v-card-title>
+                <v-list-item-subtitle
+                    class="text--primary"
+                    v-text="closeCantines[0].city"
+                ></v-list-item-subtitle>
 
-          <v-card-subtitle>
-            {{item.category}}
-          </v-card-subtitle>
+                <v-list-item-subtitle
+                    v-text="closeCantines[0].address"
+                ></v-list-item-subtitle>
+              </v-list-item-content>
 
-        </v-card>
-      </v-col>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item :key="closeCantines[1].name">
 
-    </v-row>
+              <v-list-item-content>
+                <v-list-item-title
+                    v-text="closeCantines[1].name">
+                </v-list-item-title>
+
+                <v-list-item-subtitle
+                    class="text--primary"
+                    v-text="closeCantines[1].city"
+                ></v-list-item-subtitle>
+
+                <v-list-item-subtitle
+                    v-text="closeCantines[1].address"
+                ></v-list-item-subtitle>
+              </v-list-item-content>
+
+          </v-list-item>
+      </v-list-item-group>
+    </v-list>
 
   </v-container>
 </template>
 
 <script>
-import axios from "axios";
+import router from 'router';
+import { mapState } from 'vuex';
 
 export default {
-  name: 'FoodBox',
-  data() {
-    return {
-      menu: [],
-      url: 'https://openmensa.org/api/v2/canteens/'
-    };
-  },
-  methods: {
-    loadMenu(canteen, day) {
-      let apiUrl = this.url+canteen+"/days/"+day+"/meals"
 
-      axios
-          .get(apiUrl)
-          .then(response => {
-            response = response.data;
-            this.menu = response.data;
-          })
-          .catch(() => {
-            this.menu = [];
-          });
-    }
-  }
-};
+  name: 'MensaListMini',
+  computed: mapState([
+    'closeCantines'
+  ]),
+
+}
+
 </script>
 
 <style scoped>

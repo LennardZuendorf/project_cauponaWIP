@@ -1,59 +1,63 @@
 <template>
   <v-container>
-    <v-row>
 
-      <v-col cols="6" v-for="cafeteria in `${state.closeCafeterias}`">
-        <v-list-item two-line>
-          <v-list-item-title>
-            {{cafeteria.name}}
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            <v-btn
+    <v-list two-line>
+      <v-list-item-group
+          multiple
+      >
 
-                @click="selectionMade({{cafeteria.id}})"
-            >
+        <template v-for="(cantine, index) in closeCantines">
 
-            </v-btn>
-          </v-list-item-subtitle>
+          <v-list-item :key="cantine.name" @click="cantineClicked(cantine)">
+            <template>
+              <v-list-item-content>
+                <v-list-item-title
+                    v-text="cantine.name">
+                </v-list-item-title>
 
-        </v-list-item>
+                <v-list-item-subtitle
+                    class="text--primary"
+                    v-text="cantine.city"
+                ></v-list-item-subtitle>
 
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon v-text="mdi-city"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{cafeteria.city}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+                <v-list-item-subtitle
+                    v-text="cantine.address"
+                ></v-list-item-subtitle>
+              </v-list-item-content>
 
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon v-text="mdi-map"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{cafeteria.address}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+            </template>
+          </v-list-item>
 
-      </v-col>
+          <v-divider
+              v-if="index < closeCantines.length - 1"
+              :key="index"
+          ></v-divider>
 
-    </v-row>
+        </template>
+      </v-list-item-group>
+    </v-list>
   </v-container>
+
 </template>
 
 <script>
+
 import router from 'router';
+import { mapState } from 'vuex';
 
   export default {
     name: 'MensaListNearby',
 
-    methods: {
-      selectionMade(id) {
-        this.$store.dispatch('saveSelectedCafeteria', {id});
-        router.push("menu")
-        }
+    computed: mapState([
+      'closeCantines'
+    ]),
+    methods:{
+
+      cantineClicked(cantine){
+        this.$store.dispatch('selectCantine', cantine);
+        this.$router.push('Menu')
       }
+    }
     }
 
 </script>

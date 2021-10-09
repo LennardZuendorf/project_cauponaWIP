@@ -4,6 +4,7 @@
 
     <v-main>
       <router-view/>
+      <v-spacer></v-spacer>
     </v-main>
 
     <Navigation></Navigation>
@@ -14,19 +15,25 @@
 
 import Toolbar from "@/components/Toolbar";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer"
+import {mapState} from "vuex";
+import LogoLong from "@/components/logos/LogoLong";
 
 export default {
   name: 'app',
 
-  components: {Navigation, Toolbar},
+  components: {LogoLong, Navigation, Toolbar, Footer},
 
   data: () => ({}),
+  computed: mapState([
+    'closeCantines', 'selectedCafeteria'
+  ]),
 
-    beforeMount(){
-
-      this.$store.dispatch('loadCafeterias');
-      this.$store.dispatch('getCloseCafeterias');
-    }
+  beforeMount(){
+    this.$store.dispatch('loadCafeterias');
+    this.$store.dispatch('getUserLocation');
+    this.$store.dispatch('loadNearbyCantines')
+  }
 };
 
 </script>

@@ -1,67 +1,74 @@
 <template>
   <div class="Home">
-    <v-container fill-height>
+    <v-container full-height>
 
-      <v-row>
+      <v-col>
         <v-card
-            class="mx-auto"
-            width="95%"
-            height="45%"
+            height="40%"
             elevation="3"
             color="background"
         >
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title class="text-h5 mb-1">
-                find nearby cantines
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+
+          <v-card-title>
+            see the nearest cantines
+          </v-card-title>
+
+          <v-card-subtitle>
+            Please allows us to access your location!
+          </v-card-subtitle>
+
+          <MensaListMini></MensaListMini>
+
+        </v-card>
+      </v-col>
+
+      <v-spacer></v-spacer>
+
+      <v-col>
+        <v-card
+            height="40%"
+            elevation="3"
+            color="background"
+        >
+
+          <v-card-title>
+            discover one cantine
+          </v-card-title>
+
+          <v-card-subtitle>
+            {{selectedCafeteria.name}}
+          </v-card-subtitle>
 
           <v-card-text>
-            <MapBox></MapBox>
+            <FoodBoxMini></FoodBoxMini>
           </v-card-text>
 
         </v-card>
-      </v-row>
+      </v-col>
 
-      <v-row>
-        <v-card
-          class="mx-auto"
-          width="95%"
-          height="45%"
-          elevation="3"
-          color="background"
-        >
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title class="text-h5 mb-1">
-                discover the nearest cantines
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                Cantine XY
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-card-text>
-            <foo
-          </v-card-text>
-      </v-card>
-
-      </v-row>
     </v-container>
 
   </div>
 </template>
 
 <script>
-import MapBox from "@/components/MensaOverview/MensaList";
+import { mapState } from 'vuex';
+
+import MensaListNearby from "@/components/MensaOverview/MensaListNearbyAuth";
+import FoodBoxMini from "@/components/Menu/FoodBoxMini";
+import MensaListMini from "@/components/MensaOverview/MensaListMini";
+
+
 export default {
   name: "Home",
-  components: {MapBox}
+  components: {FoodBoxMini, MensaListNearby, MensaListMini},
+
+  computed: mapState([
+    'closeCantines', 'selectedCafeteria'
+  ]),
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

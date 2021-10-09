@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -10,15 +11,20 @@ const routes = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
   },
   {
+    path:'/home',
+    name:'Home',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+  },
+  {
     path: '/list',
     name: 'List',
-    component: () => import(/* webpackChunkName: "map" */ '../views/List.vue')
+    component: () => import(/* webpackChunkName: "map" */ '../views/MensaOverview/List.vue')
   },
   {
     path: '/menu',
     name: 'Menu',
-    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu.vue')
-  }
+    component: () => import(/* webpackChunkName: "menu" */ '../views/Menu/Menu.vue')
+  },
 ]
 
 const router = new VueRouter({
