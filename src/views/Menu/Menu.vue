@@ -1,137 +1,44 @@
 <template>
-  <div class="Menu">
+  <div class="List">
+    <v-container full-height>
 
-    <v-container fill-height>
-      <h1>Check out the Menü</h1>
-   <!--
-    <v-card
-        class="mx-auto"
-        width="95%"
-        height="90%"
-        elevation="3"
-        color="background"
-    >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h5 mb-1">
-            Check out the menu
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Your selected cafeteria:
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-card-text>
-        <FoodBox></FoodBox>
-      </v-card-text>
-
-    </v-card>
-    -->
-    </v-container>
-
-    <v-container fill-height>
-      <h1>TODAYS SPECIALS</h1>
-      <div class="cardContainer">
-      <v-card v-for="today in anzTodays" :key="today"
-          class="mx-auto card"
+      <v-col>
+        <v-card
+            elevation="3"
+            color="background"
         >
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="text-h5 mb-1">
-             Todays Special
-            </v-list-item-title>
-            <v-list-item-subtitle>
 
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+          <v-card-title>
+            check out the menu
+          </v-card-title>
 
-        <v-card-text>
-          <FoodBox></FoodBox>
-        </v-card-text>
+          <v-card-subtitle>
+            menu for {{selectedCafeteria.name}}
+          </v-card-subtitle>
 
-      </v-card>
-      </div>
-    </v-container>
-
-    <v-container fill-height>
-      <h1>MAIN COURSES</h1>
-      <div class="cardContainer">
-        <v-card v-for="menu in anzMenues" :key="menu"
-                class="mx-auto card"
-        >
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title class="text-h5 mb-1">
-                Main Courses
-              </v-list-item-title>
-              <v-list-item-subtitle>
-
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-card-text>
-            <FoodBox></FoodBox>
-          </v-card-text>
+          <food-box></food-box>
 
         </v-card>
-      </div>
+      </v-col>
+
     </v-container>
-
-    <v-container fill-height>
-      <h1>DESSERTS</h1>
-      <div class="cardContainer">
-        <v-card v-for="dessert in anzDesserts" :key="dessert"
-                class="mx-auto card"
-        >
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title class="text-h5 mb-1">
-                Dessert
-              </v-list-item-title>
-              <v-list-item-subtitle>
-
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-card-text>
-            <FoodBox></FoodBox>
-          </v-card-text>
-
-        </v-card>
-      </div>
-    </v-container>
-
   </div>
 </template>
 
 <script>
 import FoodBox from "@/components/Menu/FoodBox";
+import {mapState} from "vuex";
 
 export default {
   name: "Menu",
+  components:{FoodBox},
 
-  data(){
-    return{anzMenues: 5,
-      anzTodays: 5,
-      anzDesserts: 5}
-  }
+  computed: mapState([
+    'selectedCafeteria'
+  ])
 }
 </script>
 
 <style scoped>
-.card{
-  width: 170px;
-  height: 170px;
-  elevation: 3;
-  color: background;
-}
-.cardContainer{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
+
 </style>
