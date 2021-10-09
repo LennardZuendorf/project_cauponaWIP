@@ -1,54 +1,95 @@
 <template>
   <v-container>
 
-    <v-row>
+    <v-list two-line>
+      <v-list-item-group
+          multiple
+      >
 
-      <v-col cols="4" v-for="item in menu">
-        <v-card>
+        <template v-for="(food, index) in selectedMenu">
 
-          <v-card-title>
-            {{item.name}}
-          </v-card-title>
+          <v-list-item
+              :key="food.name">
+            <template>
 
-          <v-card-subtitle>
-            {{item.category}}
-          </v-card-subtitle>
+              <v-list-item-content>
+                <v-list-item-title
+                    v-text="food.name">
+                </v-list-item-title>
 
-        </v-card>
-      </v-col>
+                <v-list-item-subtitle
+                    class="text--primary"
+                    v-text="food.category"
+                ></v-list-item-subtitle>
 
-    </v-row>
+                <v-list-item-subtitle>
 
+                  <v-chip-group
+                      column
+                  >
+                    <v-chip
+                        v-for="note in food.notes"
+                        :key="note"
+                        class="ma-2"
+                        small
+                        color="primary"
+                    >
+                      {{ note }}
+                    </v-chip>
+                  </v-chip-group>
+
+                </v-list-item-subtitle>
+
+                <v-list-item-subtitle>
+
+                  <v-chip-group column>
+                    <v-chip class="ma-2" x-small color="background">
+                      students pay {{food.prices.students}}
+                    </v-chip>
+
+                    <v-chip class="ma-2" x-small color="background">
+                      employees pay {{food.prices.employees}}
+                    </v-chip>
+
+                    <v-chip class="ma-2" x-small color="background">
+                      others pay {{food.prices.others}}
+                    </v-chip>
+                  </v-chip-group>
+                </v-list-item-subtitle>
+
+              </v-list-item-content>
+
+            </template>
+          </v-list-item>
+
+          <v-divider
+              v-if="index < selectedMenu.length - 1"
+              :key="index"
+          ></v-divider>
+
+        </template>
+      </v-list-item-group>
+    </v-list>
   </v-container>
+
 </template>
 
 <script>
-import axios from "axios";
+import {mapState} from "vuex";
 
 export default {
   name: 'FoodBox',
-  data() {
-    return {
-      menu: [],
-      url: 'https://openmensa.org/api/v2/canteens/'
-    };
-  },
-  methods: {
-    loadMenu(canteen, day) {
-      let apiUrl = this.url+canteen+"/days/"+day+"/meals"
 
-      axios
-          .get(apiUrl)
-          .then(response => {
-            response = response.data;
-            this.menu = response.data;
-          })
-          .catch(() => {
-            this.menu = [];
-          });
-    }
+  computed: mapState([
+      'selectedCafeteria', 'selectedMenu'
+  ]),
+
+  updated() {
+    this.$store.dispatch('getOpen', selectedCafeteria.id);
+    this.$store.dispatch('loadMenu', selectedCafeteria.id)
   }
-};
+}
+
 </script>
 
 <style scoped>

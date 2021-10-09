@@ -1,35 +1,58 @@
 <template>
   <v-container>
 
-    <v-row>
+    <v-list two-line>
+      <v-list-item-group
+          multiple
+      >
 
-      <v-col cols="4" v-for="item in menu">
-        <v-card>
+        <template>
 
-          <v-card-title>
-            {{item.name}}
-          </v-card-title>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title v-text="selectedMenu[0].name"></v-list-item-title>
+              <v-list-item-subtitle v-text="selectedMenu[0].category"></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-          <v-card-subtitle>
-            {{item.category}}
-          </v-card-subtitle>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title v-text="selectedMenu[1].name"></v-list-item-title>
+              <v-list-item-subtitle v-text="selectedMenu[1].category"
+              ></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-        </v-card>
-      </v-col>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title v-text="selectedMenu[2].name"></v-list-item-title>
+              <v-list-item-subtitle v-text="selectedMenu[3].category"></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-    </v-row>
-
+        </template>
+      </v-list-item-group>
+    </v-list>
   </v-container>
+
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
-  name: 'FoodBox',
-    data() {
-      return {
-      };
-    }
+  name: 'FoodBoxMini',
+
+  computed: mapState([
+      'closeCantines', 'selectedCafeteria', 'selectedMenu'
+  ]),
+
+  updated() {
+    this.$store.dispatch('getOpen', selectedCafeteria.id);
+    this.$store.dispatch('loadMenu', selectedCafeteria.id)
   }
+}
+
 </script>
 
 <style scoped>
