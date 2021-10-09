@@ -8,7 +8,7 @@
 
         <template v-for="(cantine, index) in closeCantines">
 
-          <v-list-item :key="cantine.name">
+          <v-list-item :key="cantine.name" @click="cantineClicked(cantine)">
             <template>
               <v-list-item-content>
                 <v-list-item-title
@@ -36,8 +36,8 @@
         </template>
       </v-list-item-group>
     </v-list>
-
   </v-container>
+
 </template>
 
 <script>
@@ -51,13 +51,13 @@ import { mapState } from 'vuex';
     computed: mapState([
       'closeCantines'
     ]),
+    methods:{
 
-    methods: {
-      selectionMade(id) {
-        this.$store.dispatch('saveSelectedCafeteria', {id});
-        router.push("menu")
-        }
+      cantineClicked(cantine){
+        this.$store.dispatch('selectCantine', cantine);
+        this.$router.push('Menu')
       }
+    }
     }
 
 </script>
