@@ -1,8 +1,7 @@
 
 ![Logo](https://github.com/HTW-PMA/mensa-app-gruppe02/blob/building/src/assets/caupona_logo_long_big.svg)
 
-
-Caupona is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id.
+[Caupona](https://caupona.herokuapp.com/) is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id.
 
 
 ## Authors
