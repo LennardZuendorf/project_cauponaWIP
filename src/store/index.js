@@ -74,13 +74,13 @@ export default new Vuex.Store({
             },
 
             //hard coded because of bug
-            //inspired by https://developer.mozilla.org/de/docs/Web/API/Geolocation/getCurrentPosition
             getUserLocation({commit}){
                 commit('setUserLat', 52.519497922);
                 commit('setUserLng', 13.407165038);
             },
 
-            /*
+            /* //disabled for bugfixing and testing purposes
+            //inspired by https://developer.mozilla.org/de/docs/Web/API/Geolocation/getCurrentPosition
             getUserLocation({ state, commit }) {
 
                 function success(pos) {
