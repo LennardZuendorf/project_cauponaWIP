@@ -17,7 +17,7 @@
             Please allows us to access your location!
           </v-card-subtitle>
 
-          <MensaListMini></MensaListMini>
+          <MensaListFavorite></MensaListFavorite>
 
         </v-card>
       </v-col>
@@ -32,7 +32,7 @@
         >
 
           <v-card-title>
-            discover one cantine
+            your favorite cantine
           </v-card-title>
 
           <v-card-subtitle>
@@ -56,15 +56,20 @@ import { mapState } from 'vuex';
 
 import FoodBoxMini from "@/components/Menu/FoodBoxMini";
 import MensaListMini from "@/components/MensaOverview/MensaListMini";
+import MensaListFavorite from "@/components/MensaOverview/MensaListFavorite";
 
 
 export default {
-  name: "Home",
-  components: {FoodBoxMini, MensaListMini},
+  name: "HomeAuth",
+  components: {MensaListFavorite, FoodBoxMini, MensaListMini},
 
   computed: mapState([
-    'closeCantines', 'selectedCafeteria'
+    'closeCantines', 'selectedCafeteria', "favoriteCafeteria"
   ]),
+
+  mounted() {
+    this.$store.dispatch('selectCantine', `${Store.state.favoriteCafeteria}`);
+  }
 }
 </script>
 
