@@ -58,6 +58,14 @@ export default new Vuex.Store({
 
             setUserLng(state, payload){
                 state.userLocationLng = payload;
+            },
+
+            setFavoriteCantine(state, payload){
+                state.favoriteCafeteria = payload;
+            },
+
+            setFavoriteFood(state, payload){
+                state.favoriteFood = payload;
             }
         },
 
@@ -185,6 +193,17 @@ export default new Vuex.Store({
                         commit('setMenu', menu);
                         console.log(menu);
                     })
+            },
+
+            //missing: loading persistent favorites from database
+            //therefore hard coded
+            loadFavorites({state, commit}){
+                let favCantine = {"id":30,"name":"Mensa HTW Treskowallee","city":"Berlin","address":"Treskowallee 8, 10318 Berlin","coordinates":[52.493122105671404,13.525870442390442]}
+                let favFood = [{"id":4655115,"name":"Chili con Soja mit frischem Gemüse","category":"Essen","prices":{"students":1.9,"employees":3.8,"pupils":null,"others":4.2},"notes":["grün (Ampel)","vegan","Klimaessen","Sellerie","Soja","Antioxidationsmittel"]},]
+
+                commit('setFavoriteCantine', favCantine);
+                commit('setFavoriteFood', favFood);
+
             }
         },
 

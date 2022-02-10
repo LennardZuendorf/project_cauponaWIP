@@ -1,38 +1,29 @@
 <template>
-  <v-app>
-    <Toolbar></Toolbar>
-
-    <v-main>
-      <router-view/>
-      <v-spacer></v-spacer>
-    </v-main>
-
-    <Navigation></Navigation>
-  </v-app>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
 </template>
+<style>
+#app {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-<script>
+#nav {
+  padding: 30px;
+}
 
-import Toolbar from "@/components/Toolbar";
-import Navigation from "@/components/Navigation";
-import {mapState} from "vuex";
-import LogoLong from "@/components/logos/LogoLong";
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-export default {
-  name: 'app',
-
-  components: {LogoLong, Navigation, Toolbar},
-
-  data: () => ({}),
-  computed: mapState([
-    'closeCantines', 'selectedCafeteria'
-  ]),
-
-  beforeMount(){
-    this.$store.dispatch('loadCafeterias');
-    this.$store.dispatch('getUserLocation');
-    this.$store.dispatch('loadNearbyCantines')
-  }
-};
-
-</script>
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>

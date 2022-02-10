@@ -9,14 +9,14 @@
         >
 
           <v-card-title>
-            see nearby cantines
+            check out the menu
           </v-card-title>
 
           <v-card-subtitle>
-            Please allow us access to your location!
+            menu for {{selectedCafeteria.name}}
           </v-card-subtitle>
 
-          <MensaListNearby></MensaListNearby>
+          <food-box-auth></food-box-auth>
 
         </v-card>
       </v-col>
@@ -26,12 +26,16 @@
 </template>
 
 <script>
-import MensaListNearby from "@/components/MensaOverview/MensaListNearby";
-import MensaListFavorite from "@/components/MensaOverview/MensaListFavorite";
+import FoodBoxAuth from "@/components/Menu/FoodBoxAuth";
+import {mapState} from "vuex";
 
 export default {
-  name: "List",
-  components: {MensaListNearby, MensaListFavorite}
+  name: "MenuAuth",
+  components:{FoodBoxAuth},
+
+  computed: mapState([
+    'selectedCafeteria'
+  ]),
 }
 </script>
 

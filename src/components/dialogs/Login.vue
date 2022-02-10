@@ -35,28 +35,18 @@
         <v-spacer></v-spacer>
       </v-toolbar>
 
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-form ref="form" @submit.prevent="login" autocomplete="off">
         <v-container>
           <v-row align-content="center">
             <v-col cols="12">
               <v-text-field
-                  v-model="email"
-                  :rules="emailRules"
-                  label="e-mail"
+                  v-model="email" placeholder="email" v-focus
               ></v-text-field>
             </v-col>
 
             <v-col cols="12">
               <v-text-field
-                  v-model="password"
-                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                  :rules="passwordRules"
-                  :type="show1 ? 'text' : 'password'"
-                  name="input-10-1"
-                  label="password"
-                  hint="At least 8 characters"
-                  counter
-                  @click:append="show = !show"
+                  v-model="pass" placeholder="password" type="password"
               ></v-text-field>
             </v-col>
 
@@ -65,19 +55,13 @@
                   class="mr-4"
                   color="primary"
                   type="submit"
-                  :disabled="invalid"
               >
                 login
               </v-btn>
             </v-col>
 
             <v-col cols="3">
-              <v-btn
-                  @click="clear"
-                  class="mr-4"
-                  color="error">
-                reset
-              </v-btn>
+              <p v-if="error" class="error">Bad login information</p>
             </v-col>
           </v-row>
         </v-container>
@@ -89,42 +73,28 @@
 </template>
 
 <script>
+import auth from "@/auth";
 
 export default {
-  name: "Login",
-  data() {
-    return {
-      dialog: false,
-      notifications: false,
-      sound: true,
-      widgets: false,
-      show: false,
-      valid: false,
-      email: '',
-      password: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid'
-      ],
-      passwordRules: [
-        v => !!v || 'Password is required',
-        v =>
-            v.length >= 6 ||
-            'Password must be greater than 6 characters'
-      ],
-      methods: {
-        submit() {
-          if (this.$refs.form.validate()) {
-            this.$store.dispatch('userLogin', {
-              email: this.email,
-              password: this.password
-            });
+    data () {
+      return {
+        email: '',
+        pass: '',
+        error: false
+      }
+    },
+    methods: {
+      login () {
+        auth.login(this.email, this.pass, loggedIn => {
+          if (!loggedIn) {
+            this.error = true
+          } else {
+            this.$router.replace(this.$route.query.redirect || '/')
           }
-        }
+        })
       }
     }
   }
-}
 
 </script>
 
