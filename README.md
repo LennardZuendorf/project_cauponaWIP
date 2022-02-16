@@ -21,6 +21,11 @@
 
 **Hosting:** Heroku
 
+## Badges (main)
+
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona)
+
   
 ## Appendix
 
