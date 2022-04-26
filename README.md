@@ -1,6 +1,8 @@
 ![Logo](https://github.com/HTW-PMA/mensa-app-gruppe02/blob/building/src/assets/caupona_logo_long_big.svg)
 
-Caupona is a companion for cantines of the Studentenwerk Berlin. 
+# [Caupona](https://caupona.herokuapp.com/)
+Is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id. Caupona is a companion for cantines of the Studentenwerk Berlin. 
+
 
 ## Roadmap/Purpose
 
@@ -21,6 +23,12 @@ I maintain this project as a study repo for a webapp with Node.js/Vue based fron
 **Database:** Firebase Realtime Database
 
 **Hosting:** Firebase
+
+
+## Badges (main)
+
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona)
 
 
 ## Appendix

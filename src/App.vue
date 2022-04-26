@@ -1,55 +1,49 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <Toolbar></Toolbar>
 
     <v-main>
       <router-view/>
+      <v-spacer></v-spacer>
     </v-main>
+
+    <Navigation></Navigation>
   </v-app>
 </template>
 
 <script>
 
-export default {
-  name: 'App',
+import Toolbar from "@/components/Toolbar";
+import Navigation from "@/components/Navigation";
+import {mapState} from "vuex";
+import LogoLong from "@/components/logos/LogoLong";
+import auth from './auth'
 
-  data: () => ({
-    //
-  }),
+export default {
+  name: 'app',
+
+  components: {LogoLong, Navigation, Toolbar},
+
+  data () {
+      return {
+        loggedIn: auth.loggedIn()
+      }
+    },
+    created () {
+      auth.onChange = loggedIn => {
+        this.loggedIn = loggedIn
+      }
+    },
+  computed: mapState([
+    'closeCantines', 'selectedCafeteria'
+  ]),
+
+  beforeMount(){
+    this.$store.dispatch('loadCafeterias');
+    this.$store.dispatch('getUserLocation');
+    this.$store.dispatch('loadNearbyCantines')
+    this.$store.dispatch('loadFavorites')
+  }
 };
+
 </script>

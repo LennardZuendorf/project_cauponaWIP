@@ -1,15 +1,73 @@
 <template>
-  <hello-world />
+  <div class="Home">
+    <v-container full-height>
+
+      <v-col>
+        <v-card
+            height="40%"
+            elevation="3"
+            color="background"
+        >
+
+          <v-card-title>
+            see the nearest cantines
+          </v-card-title>
+
+          <v-card-subtitle>
+            Please allows us to access your location!
+          </v-card-subtitle>
+
+          <MensaListMini></MensaListMini>
+
+        </v-card>
+      </v-col>
+
+      <v-spacer></v-spacer>
+
+      <v-col>
+        <v-card
+            height="40%"
+            elevation="3"
+            color="background"
+        >
+
+          <v-card-title>
+            discover one cantine
+          </v-card-title>
+
+          <v-card-subtitle>
+            {{selectedCafeteria.name}}
+          </v-card-subtitle>
+
+          <v-card-text>
+            <FoodBoxMini></FoodBoxMini>
+          </v-card-text>
+
+        </v-card>
+      </v-col>
+
+    </v-container>
+  </div>
+
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import { mapState } from 'vuex';
 
-  export default {
-    name: 'Home',
+import FoodBoxMini from "@/components/Menu/FoodBoxMini";
+import MensaListMini from "@/components/MensaOverview/MensaListMini";
 
-    components: {
-      HelloWorld,
-    },
-  }
+
+export default {
+  name: "Home",
+  components: {FoodBoxMini, MensaListMini},
+
+  computed: mapState([
+    'closeCantines', 'selectedCafeteria'
+  ]),
+}
 </script>
+
+<style>
+
+</style>
