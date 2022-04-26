@@ -4,7 +4,7 @@
 Is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id. Caupona is a companion for cantines of the Studentenwerk Berlin. 
 
 
-## Roadmap/Purpose
+## roadmap/purpose
 
 I maintain this project as a study repo for a webapp with Node.js/Vue based frontend powered by firebase hosting, auth and realtime database. This project wil eventually be updated to Vue 3 once Vuetify and Vuefire release Vue 3 support.
 
@@ -20,7 +20,7 @@ I maintain this project as a study repo for a webapp with Node.js/Vue based fron
 
 **Client:** Vue.js, Vuetify
 
-**Database:** Firebase Realtime Database
+**Database:** Firestore
 
 **Hosting:** Firebase
 
@@ -28,7 +28,9 @@ I maintain this project as a study repo for a webapp with Node.js/Vue based fron
 ## Badges (main)
 
 [![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
-[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona)
+
+![CodigaCodeQuality](https://api.codiga.io/project/33183/score/svg)
+![CodigaCodeGrade](https://api.codiga.io/project/33183/status/svg)
 
 
 ## Appendix
