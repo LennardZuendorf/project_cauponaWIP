@@ -6,7 +6,7 @@ Is the companion for cantines of the Studentenwerk Berlin, giving information ab
 
 ## Roadmap/Purpose
 
-I maintain this project as a study repo for a webapp with Node.js/Vue based frontend powered by firebase hosting, auth and realtime database. This project wil eventually be updated to Vue 3 once Vuetify and Vuefire release Vue 3 support.
+This project was originally build on Vue.js and a minimal express.js backend. I rebuild the design in flutter with the help of flutterflow, utilising a firebase backend.
 
 
 ## Authors
@@ -18,9 +18,9 @@ I maintain this project as a study repo for a webapp with Node.js/Vue based fron
 
 ## Tech Stack
 
-**Client:** Vue.js, Vuetify
+**Client:** Flutter
 
-**Database:** Firebase Realtime Database
+**Database:** Firestore
 
 **Hosting:** Firebase
 
