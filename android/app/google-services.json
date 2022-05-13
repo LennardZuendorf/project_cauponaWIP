@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "585940552193",
+    "project_id": "caupona-project",
+    "storage_bucket": "caupona-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585940552193:android:efcbb18328f06f9ecace00",
+        "android_client_info": {
+          "package_name": "com.flutter.caupona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585940552193-nassu45npsqkmnlpjr2ceht7fgjc7ev7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutter.caupona",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "585940552193-lu2n3140aircir0488gfb46hr47bs85m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0AuClXmkDcvbXBPCNhl2KlOgHjmEcBiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585940552193-lu2n3140aircir0488gfb46hr47bs85m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "585940552193-3kmc938llqi6kfol93p9q6esf80tpvcq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutter.caupona"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

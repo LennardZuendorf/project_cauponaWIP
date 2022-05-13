@@ -1,36 +1,31 @@
-![Logo](https://github.com/HTW-PMA/mensa-app-gruppe02/blob/building/src/assets/caupona_logo_long_big.svg)
+# caupona
 
-# [Caupona](https://caupona.herokuapp.com/)
-Is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id. Caupona is a companion for cantines of the Studentenwerk Berlin. 
+A new Flutter project.
 
+## Getting Started
 
-## Roadmap/Purpose
+FlutterFlow projects are built to run on the Flutter _stable_ release.
 
-This project was originally build on Vue.js and a minimal express.js backend. I rebuild the design in flutter with the help of flutterflow, utilising a firebase backend.
+### IMPORTANT:
 
+For projects with Firestore integration, you must first run the following commands to ensure the project compiles:
 
-## Authors
+```
+flutter pub get
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
 
-- [@LennardZuendorf](https://github.com/LennardZuendorf)
-- [@Gökalp Yiliminiz](https://github.com/Goekalp)
-- [@Samuel Gehring](https://github.com/gehrisam)
+This command creates the generated files that parse each Record from Firestore into a schema object.
 
+### Getting started continued:
 
-## Tech Stack
+This project is a starting point for a Flutter application.
 
-**Client:** Flutter
+A few resources to get you started if this is your first Flutter project:
 
-**Database:** Firestore
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-**Hosting:** Firebase
-
-
-## Badges (main)
-
-[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
-[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona)
-
-
-## Appendix
-
-CAUPONA is a programming project originally developed as part of the course "Programming of mobile Apps". The course is part of HTW Berlins' Ba Sc. Business Computing.
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
