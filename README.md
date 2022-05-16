@@ -1,31 +1,23 @@
 # caupona
+The Caupona project is a Flutter webapp meant to be the companion (mainly) of students using the university cantines.
 
-A new Flutter project.
+## tech stack
 
-## Getting Started
+**Client:** Flutter/Dart
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+**Database:** Firestore
 
-### IMPORTANT:
+**Hosting:** Firebase
 
-For projects with Firestore integration, you must first run the following commands to ensure the project compiles:
 
-```
-flutter pub get
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
+## Badges (main)
 
-This command creates the generated files that parse each Record from Firestore into a schema object.
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
-### Getting started continued:
+![CodigaCodeQuality](https://api.codiga.io/project/33183/score/svg)
+![CodigaCodeGrade](https://api.codiga.io/project/33183/status/svg)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Appendix
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+CAUPONA is a programming project originally developed as part of the course "Programming of mobile Apps". The course is part of HTW Berlins' Ba Sc. Business Computing.
