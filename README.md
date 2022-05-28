@@ -1,24 +1,9 @@
-![Logo](https://github.com/HTW-PMA/mensa-app-gruppe02/blob/building/src/assets/caupona_logo_long_big.svg)
+# caupona
+The Caupona project is a Flutter webapp meant to be the companion (mainly) of students using the university cantines.
 
-# [Caupona](https://caupona.herokuapp.com/)
-Is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id. Caupona is a companion for cantines of the Studentenwerk Berlin. 
+## tech stack
 
-
-## roadmap/purpose
-
-I maintain this project as a study repo for a webapp with Node.js/Vue based frontend powered by firebase hosting, auth and realtime database. This project wil eventually be updated to Vue 3 once Vuetify and Vuefire release Vue 3 support.
-
-
-## Authors
-
-- [@LennardZuendorf](https://github.com/LennardZuendorf)
-- [@Gökalp Yiliminiz](https://github.com/Goekalp)
-- [@Samuel Gehring](https://github.com/gehrisam)
-
-
-## Tech Stack
-
-**Client:** Vue.js, Vuetify
+**Client:** Flutter/Dart
 
 **Database:** Firestore
 
