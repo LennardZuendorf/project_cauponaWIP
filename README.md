@@ -1,24 +1,9 @@
-![Logo](https://github.com/HTW-PMA/mensa-app-gruppe02/blob/building/src/assets/caupona_logo_long_big.svg)
+# caupona
+The Caupona project is a Flutter webapp meant to be the companion (mainly) of students using the university cantines.
 
-# [Caupona](https://caupona.herokuapp.com/)
-Is the companion for cantines of the Studentenwerk Berlin, giving information about food, tips for nutrrition, as well as occupancy of cantines and the possibility to have a digital version of you student id. Caupona is a companion for cantines of the Studentenwerk Berlin. 
+## tech stack
 
-
-## Roadmap/Purpose
-
-This project was originally build on Vue.js and a minimal express.js backend. I rebuild the design in flutter with the help of flutterflow, utilising a firebase backend.
-
-
-## Authors
-
-- [@LennardZuendorf](https://github.com/LennardZuendorf)
-- [@Gökalp Yiliminiz](https://github.com/Goekalp)
-- [@Samuel Gehring](https://github.com/gehrisam)
-
-
-## Tech Stack
-
-**Client:** Flutter
+**Client:** Flutter/Dart
 
 **Database:** Firestore
 
@@ -28,7 +13,9 @@ This project was originally build on Vue.js and a minimal express.js backend. I 
 ## Badges (main)
 
 [![CircleCI](https://circleci.com/gh/LennardZuendorf/project_caupona.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
-[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_caupona)
+
+![CodigaCodeQuality](https://api.codiga.io/project/33183/score/svg)
+![CodigaCodeGrade](https://api.codiga.io/project/33183/status/svg)
 
 
 ## Appendix

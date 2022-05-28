@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>585940552193-3kmc938llqi6kfol93p9q6esf80tpvcq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.585940552193-3kmc938llqi6kfol93p9q6esf80tpvcq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>585940552193-nassu45npsqkmnlpjr2ceht7fgjc7ev7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDAnNhOcRuHSG_SgDh2uV19TfXjfEEQiZ0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>585940552193</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flutter.caupona</string>
+	<key>PROJECT_ID</key>
+	<string>caupona-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>caupona-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:585940552193:ios:6d3858f86e878a7acace00</string>
+</dict>
+</plist>
